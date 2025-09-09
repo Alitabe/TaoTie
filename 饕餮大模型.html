@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>饕餮大模型</title>
+  <script src="./饕餮大模型_files/saved_resource"></script>
+  <link href="./饕餮大模型_files/font-awesome.min.css" rel="stylesheet" />
+  <script src="./饕餮大模型_files/chart.umd.min.js.下载"></script>
+  <!-- link href="./饕餮大模型_files/css2" rel="stylesheet" -->
+  <!-- 引入FontAwesome图标库（使用CDN） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1E40AF", // 深蓝色主色调 - 专业、可靠
+            secondary: "#3B82F6", // 中蓝色辅助色
+            accent: "#F97316", // 橙色强调色 - 代表矿产资源
+            dark: "#1E293B", // 深色背景
+            light: "#F8FAFC", // 浅色背景
+          },
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+        .card-shadow {
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05),
+            0 8px 10px -6px rgba(0, 0, 0, 0.03);
+        }
+        .gradient-bg {
+          background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+        }
+        .text-balance {
+          text-wrap: balance;
+        }
+        /* .image-container {
+          @apply relative w-full h-[300px] md:h-[400px] bg-gray-100 rounded-lg overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300;
+        }
+        .btn-effect {
+          @apply transform transition-all duration-300 hover:scale-105 active:scale-95;
+        }
+        .card-hover {
+          @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+        }
+        .progress-bar {
+          @apply h-2 bg-gray-200 rounded-full overflow-hidden hidden;
+        }
+        .progress-fill {
+          @apply h-full bg-primary transition-all duration-300 w-0;
+        } */
+      }
+    </style>
+
+  <style>
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb;
+    }
+
+    ::after,
+    ::before {
+      --tw-content: "";
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit;
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    input:where([type="button"]),
+    input:where([type="reset"]),
+    input:where([type="submit"]) {
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none;
+    }
+
+    :-moz-focusring {
+      outline: auto;
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    [type="search"] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      padding: 0;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dialog {
+      padding: 0;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af;
+    }
+
+    [role="button"],
+    button {
+      cursor: pointer;
+    }
+
+    :disabled {
+      cursor: default;
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+      vertical-align: middle;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    [hidden]:where(:not([hidden="until-found"])) {
+      display: none;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .container {
+        max-width: 1280px;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1536px;
+      }
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .inset-0 {
+      inset: 0px;
+    }
+
+    .top-0 {
+      top: 0px;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mb-1 {
+      margin-bottom: 0.25rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mr-1 {
+      margin-right: 0.25rem;
+    }
+
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+
+    .mr-3 {
+      margin-right: 0.75rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.25rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .aspect-video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .h-2 {
+      height: 0.5rem;
+    }
+
+    .h-8 {
+      height: 2rem;
+    }
+
+    .h-auto {
+      height: auto;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .w-8 {
+      width: 2rem;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+
+    .max-w-3xl {
+      max-width: 48rem;
+    }
+
+    .max-w-6xl {
+      max-width: 72rem;
+    }
+
+    .max-w-full {
+      max-width: 100%;
+    }
+
+    .max-w-xl {
+      max-width: 36rem;
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    .transform {
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+    .appearance-none {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .items-end {
+      align-items: flex-end;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-end {
+      justify-content: flex-end;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .space-x-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-x-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1rem * var(--tw-space-x-reverse));
+      margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-x-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-y-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-3> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .border {
+      border-width: 1px;
+    }
+
+    .border-2 {
+      border-width: 2px;
+    }
+
+    .border-b {
+      border-bottom-width: 1px;
+    }
+
+    .border-t {
+      border-top-width: 1px;
+    }
+
+    .border-dashed {
+      border-style: dashed;
+    }
+
+    .border-gray-100 {
+      --tw-border-opacity: 1;
+      border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
+    }
+
+    .border-gray-300 {
+      --tw-border-opacity: 1;
+      border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+    }
+
+    .border-gray-800 {
+      --tw-border-opacity: 1;
+      border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
+    }
+
+    .bg-accent {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-blue-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-blue-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-dark {
+      --tw-bg-opacity: 1;
+      background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-200 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-green-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-green-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-light {
+      --tw-bg-opacity: 1;
+      background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-primary {
+      --tw-bg-opacity: 1;
+      background-color: rgb(30 64 175 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-primary\/95 {
+      background-color: rgb(30 64 175 / 0.95);
+    }
+
+    .bg-red-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-white {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-white\/20 {
+      background-color: rgb(255 255 255 / 0.2);
+    }
+
+    .bg-yellow-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-yellow-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-transparent {
+      background-color: transparent;
+    }
+
+    .bg-gradient-to-t {
+      background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    }
+
+    .from-black\/60 {
+      --tw-gradient-from: rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    .to-transparent {
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .p-5 {
+      padding: 1.25rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .px-2\.5 {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .py-0\.5 {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .pb-6 {
+      padding-bottom: 1.5rem;
+    }
+
+    .pt-12 {
+      padding-top: 3rem;
+    }
+
+    .pt-20 {
+      padding-top: 5rem;
+    }
+
+    .pt-4 {
+      padding-top: 1rem;
+    }
+
+    .pt-6 {
+      padding-top: 1.5rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .font-inter {
+      font-family: Inter, sans-serif;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .text-\[clamp\(1\.5rem\2c 3vw\2c 2\.5rem\)\] {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .text-\[clamp\(2rem\2c 5vw\2c 3\.5rem\)\] {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .leading-tight {
+      line-height: 1.25;
+    }
+
+    .text-accent {
+      --tw-text-opacity: 1;
+      color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+    }
+
+    .text-blue-700 {
+      --tw-text-opacity: 1;
+      color: rgb(29 78 216 / var(--tw-text-opacity, 1));
+    }
+
+    .text-blue-800 {
+      --tw-text-opacity: 1;
+      color: rgb(30 64 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-dark {
+      --tw-text-opacity: 1;
+      color: rgb(30 41 59 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-400 {
+      --tw-text-opacity: 1;
+      color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-500 {
+      --tw-text-opacity: 1;
+      color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-600 {
+      --tw-text-opacity: 1;
+      color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-700 {
+      --tw-text-opacity: 1;
+      color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-800 {
+      --tw-text-opacity: 1;
+      color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+    }
+
+    .text-green-500 {
+      --tw-text-opacity: 1;
+      color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+    }
+
+    .text-green-800 {
+      --tw-text-opacity: 1;
+      color: rgb(22 101 52 / var(--tw-text-opacity, 1));
+    }
+
+    .text-primary {
+      --tw-text-opacity: 1;
+      color: rgb(30 64 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-red-500 {
+      --tw-text-opacity: 1;
+      color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    }
+
+    .text-white\/80 {
+      color: rgb(255 255 255 / 0.8);
+    }
+
+    .text-yellow-500 {
+      --tw-text-opacity: 1;
+      color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+    }
+
+    .text-yellow-800 {
+      --tw-text-opacity: 1;
+      color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+    }
+
+    .accent-primary {
+      accent-color: #1e40af;
+    }
+
+    .opacity-90 {
+      opacity: 0.9;
+    }
+
+    .shadow-2xl {
+      --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+        0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-md {
+      --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-xl {
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .backdrop-blur-sm {
+      --tw-backdrop-blur: blur(4px);
+      -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color, fill, stroke,
+        -webkit-text-decoration-color;
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke;
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .duration-200 {
+      transition-duration: 200ms;
+    }
+
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+
+    .duration-700 {
+      transition-duration: 700ms;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    }
+
+    .hover\:scale-105:hover {
+      --tw-scale-x: 1.05;
+      --tw-scale-y: 1.05;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .hover\:border-primary:hover {
+      --tw-border-opacity: 1;
+      border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
+    }
+
+    .hover\:bg-accent\/90:hover {
+      background-color: rgb(249 115 22 / 0.9);
+    }
+
+    .hover\:bg-gray-50:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+    }
+
+    .hover\:bg-primary\/90:hover {
+      background-color: rgb(30 64 175 / 0.9);
+    }
+
+    .hover\:bg-white\/30:hover {
+      background-color: rgb(255 255 255 / 0.3);
+    }
+
+    .hover\:text-accent:hover {
+      --tw-text-opacity: 1;
+      color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+    }
+
+    .hover\:text-white:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    }
+
+    .focus\:border-primary:focus {
+      --tw-border-opacity: 1;
+      border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
+    }
+
+    .focus\:outline-none:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .focus\:ring-2:focus {
+      --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+      box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+        var(--tw-shadow, 0 0 #0000);
+    }
+
+    .focus\:ring-primary:focus {
+      --tw-ring-opacity: 1;
+      --tw-ring-color: rgb(30 64 175 / var(--tw-ring-opacity, 1));
+    }
+
+    @media (min-width: 640px) {
+      .sm\:flex-row {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:mt-0 {
+        margin-top: 0px;
+      }
+
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+
+      .md\:w-1\/2 {
+        width: 50%;
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .md\:flex-row {
+        flex-direction: row;
+      }
+
+      .md\:py-24 {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .md\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      .md\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+  <!-- 导航栏 -->
+  <header id="navbar"
+    class="fixed w-full top-0 z-50 transition-all duration-300 bg-primary/95 backdrop-blur-sm shadow-md">
+    <nav class="gradient-bg text-white shadow-md">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i class="fa fa-mountain text-2xl"></i>
+          <h1 class="text-xl md:text-2xl font-bold">饕餮大模型</h1>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+          <button id="navbar-upload-btn" class="hover:text-accent transition-colors duration-200">上传数据</button>
+          <button id="navbar-model-training-btn" class="hover:text-accent transition-colors duration-200">模型训练</button>
+          <button id="navbar-results-btn" class="hover:text-accent transition-colors duration-200">结果展示</button>
+          <button id="navbar-report-btn" class="hover:text-accent transition-colors duration-200">报告分析</button>
+        </div>
+
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 移动端菜单 -->
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a href="http://127.0.0.1:5500/index.html#upload"
+            class="py-2 hover:text-accent transition-colors duration-200">上传数据</a>
+          <a href="http://127.0.0.1:5500/index.html#model-training"
+            class="py-2 hover:text-accent transition-colors duration-200">模型训练</a>
+          <a href="http://127.0.0.1:5500/index.html#results"
+            class="py-2 hover:text-accent transition-colors duration-200">结果展示</a>
+          <a href="http://127.0.0.1:5500/index.html#report"
+            class="py-2 hover:text-accent transition-colors duration-200">报告分析</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="flex-grow pt-20">
+    <!-- 英雄区域 -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="md:w-1/2 space-y-4">
+            <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
+              饕餮大模型<br />矿产勘探概率分析系统
+            </h2>
+            <p class="text-lg md:text-xl opacity-90 max-w-xl">
+              利用先进机器学习技术，分析地质数据，预测潜在矿产资源分布概率，助力高效勘探决策。
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button id="btn-start-analysis"
+                class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                开始分析
+              </button>
+              <button id="btn-end-analysis"
+                class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
+                查看示例结果
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <img src="./饕餮大模型_files/taotie.png" alt="矿产勘探数据分析可视化"
+              class="rounded-xl shadow-2xl max-w-full h-auto transform transition-all duration-700 hover:scale-105" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 上传数据部分 -->
+    <section id="upload" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            上传数据
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            上传您的地质勘探数据，系统支持多种数据格式，包括CSV、GeoJSON和Shapefile等常见地质数据格式。
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-light rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div class="space-y-6">
+            <div
+              class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-primary transition-colors duration-300 cursor-pointer"
+              id="drop-area">
+              <i class="fa fa-cloud-upload text-5xl text-gray-400 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">
+                拖放您的数据文件到这里
+              </h3>
+              <p class="text-gray-500 mb-4">或者</p>
+              <label
+                class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer inline-flex items-center">
+                <i class="fa fa-folder-open mr-2"></i> 浏览文件
+                <input type="file" class="hidden" multiple="" id="file-input" />
+              </label>
+              <p class="text-sm text-gray-400 mt-4">
+                支持格式: CSV, GeoJSON, Shapefile, XLSX
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-medium mb-3">已上传文件</h3>
+              <div id="file-list" class="space-y-3">
+                <div class="hidden text-center text-gray-500 py-4" id="empty-file-list">
+                  暂无上传文件
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="mining-type" class="block text-sm font-medium text-gray-700 mb-1">矿产类型</label>
+                <select id="mining-type"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                  <option value="gold">铜矿</option>
+                  <option value="copper">金矿</option>
+                  <option value="iron">铁矿</option>
+                  <option value="coal">煤矿</option>
+                  <option value="other">其他矿产</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="data-description" class="block text-sm font-medium text-gray-700 mb-1">数据描述</label>
+              <textarea id="data-description" rows="3"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                placeholder="请简要描述您的数据来源和特点..."></textarea>
+            </div>
+
+            <div class="flex justify-end">
+              <button id="upload-btn"
+                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
+                <i class="fa fa-upload mr-2"></i> 上传数据
+              </button>
+            </div>
+
+            <!-- 状态提示 -->
+            <div class="mt-4 text-sm text-gray-600">
+              预处理状态：<span id="preprocessStatus">未开始</span>
+            </div>
+            <div class="progress-bar mt-2">
+              <div id="preprocessProgress" class="progress-fill w-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模型训练部分 -->
+    <section id="model-training" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            模型训练
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            配置模型参数并开始训练，系统将使用饕餮大模型分析您上传的数据。
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-medium mb-4">数据权重设置</h3>
+              <p class="text-sm text-gray-500 mb-4">
+                为不同类型的数据分配权重，权重越高表示该类型数据对最终结果影响越大
+              </p>
+
+              <div id="data-weight-container" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">地球化学数据</span>
+                      <span class="text-sm text-gray-500" id="geochemical-weight-value">50%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="50"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="geochemical" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">地球物理数据</span>
+                      <span class="text-sm text-gray-500" id="geophysical-weight-value">30%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="30"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="geophysical" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">钻探数据</span>
+                      <span class="text-sm text-gray-500" id="drilling-weight-value">10%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="10"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="drilling" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">遥感数据</span>
+                      <span class="text-sm text-gray-500" id="remote-sensing-weight-value">10%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="10"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="remote-sensing" />
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-lg text-sm">
+                  <p class="text-blue-700">
+                    <i class="fa fa-info-circle mr-1"></i>
+                    提示：所有数据类型的权重之和应为100%
+                  </p>
+                  <div class="mt-2 flex justify-between">
+                    <span class="text-xs text-gray-500">总权重</span>
+                    <span class="text-xs font-medium" id="total-weight">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6">
+              <h3 class="text-lg font-medium mb-4">模型配置</h3>
+
+              <div class="space-y-4">
+                <div>
+                  <label for="model-type" class="block text-sm font-medium text-gray-700 mb-1">模型类型</label>
+                  <select id="model-type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                    <option value="model.onnx">饕餮大模型-1.0</option>
+                    <option value="taotie-advanced">饕餮大模型-2.0</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="prediction-type" class="block text-sm font-medium text-gray-700 mb-1">预测类型</label>
+                  <select id="prediction-type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                    <option value="probability">概率分布预测</option>
+                    <option value="classification">资源类型分类</option>
+                    <option value="regression">储量估计</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h4 class="font-medium">准备训练模型</h4>
+                  <p class="text-sm text-gray-500">
+                    点击下方按钮开始使用饕餮大模型进行预测
+                  </p>
+                </div>
+                <button id="train-model-btn"
+                  class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
+                  <i class="fa fa-play mr-2"></i> 开始预测
+                </button>
+              </div>
+            </div>
+
+            <!-- 进度条容器 -->
+            <div id="prediction-progress-container" class="hidden mt-4">
+              <div class="text-sm text-gray-700 mb-1">模型推理中...</div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div id="prediction-progress-bar" class="bg-primary h-2.5 rounded-full" style="width: 0%"></div>
+              </div>
+              <div id="prediction-progress-text" class="text-xs text-gray-500 mt-1 text-right">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 结果展示部分 -->
+    <section id="results" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            结果展示
+          </h2>
+          <!-- <p class="text-gray-600 max-w-2xl mx-auto">
+              基于输入数据位置信息，展示带有经纬度的实际地图和矿产存在概率热力图
+            </p>-->
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="aspect-video bg-gray-100 flex items-center justify-center relative">
+              <!-- 实际地图将在这里加载 -->
+              <img id="result-image" src="./饕餮大模型_files/v2.jpg" alt="矿产存在概率分布图"
+                class="max-w-full h-auto max-h-[70vh] object-contain mx-auto rounded-lg" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-semibold mb-2">
+                    矿产存在概率分布图
+                  </h3>
+                  <p class="text-white/80 max-w-xl">
+                    颜色越深表示存在矿产的概率越高，红色区域表示高概率存在矿产资源的区域。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">高概率区域占比</div>
+                  <div class="text-2xl font-bold text-accent mt-1">12.3%</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">中概率区域占比</div>
+                  <div class="text-2xl font-bold text-yellow-500 mt-1">
+                    35.7%
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">低概率区域占比</div>
+                  <div class="text-2xl font-bold text-green-500 mt-1">
+                    42.1%
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">预测置信度</div>
+                  <div class="text-2xl font-bold text-primary mt-1">
+                    87.2%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 报告分析部分 -->
+    <section id="report" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            报告分析
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            生成详细的分析报告，包含结果解释、建议和数据洞察，助力决策制定。
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+            <div class="p-6 border-b border-gray-100">
+              <h3 class="text-xl font-semibold mb-2">综合分析报告</h3>
+              <p class="text-gray-600">
+                基于您上传的数据和模型训练结果生成的专业分析报告
+              </p>
+            </div>
+
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-blue-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">报告摘要</h4>
+                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800">关键发现</span>
+                  </div>
+                  <p class="text-gray-600 text-sm">
+                    本分析基于2025年采集的遥感数据，使用饕餮大模型预测了研究区域内铜矿存在的概率分布。模型准确率达到87.2%，显示出良好的预测性能。
+                  </p>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">主要结论</h4>
+                    <span
+                      class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800">1个结论</span>
+                  </div>
+                  <ul class="text-gray-600 text-sm space-y-2">
+                    <li class="flex items-start">
+                      <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                      <span>研究区域内红色部分显示出较高的铜矿存在概率</span>
+                    </li>
+                    <!-- <li class="flex items-start">
+                        <i
+                          class="fa fa-check-circle text-green-500 mt-1 mr-2"
+                        ></i>
+                        <span
+                          >地球化学数据中的Au、Ag、Cu元素含量与金矿存在相关性最高</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i
+                          class="fa fa-check-circle text-green-500 mt-1 mr-2"
+                        ></i>
+                        <span
+                          >建议在A-001、B-025和C-012区域进行进一步详细勘探</span
+                        >
+                      </li> -->
+                  </ul>
+                </div>
+
+                <div class="bg-yellow-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">勘探建议</h4>
+                    <span
+                      class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800">优先级</span>
+                  </div>
+                  <div class="space-y-3">
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-flag text-red-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">高优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          4处
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-exclamation-triangle text-yellow-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">中优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          7处
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-map-o text-green-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">低优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          12处
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-gray-100 pt-6">
+                <h4 class="font-semibold mb-4">数据权重分析</h4>
+                <p class="text-gray-600 text-sm mb-4">
+                  不同类型数据对最终预测结果的贡献权重：
+                </p>
+
+                <div class="space-y-3">
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>地球化学数据</span>
+                      <span id="report-geochemical-weight">50%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-geochemical-bar" class="bg-accent h-2 rounded-full" style="width: 50%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>地球物理数据</span>
+                      <span id="report-geophysical-weight">30%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-geophysical-bar" class="bg-accent h-2 rounded-full" style="width: 30%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>钻探数据</span>
+                      <span id="report-drilling-weight">10%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-drilling-bar" class="bg-accent h-2 rounded-full" style="width: 10%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>遥感数据</span>
+                      <span id="report-remote-sensing-weight">10%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-remote-sensing-bar" class="bg-accent h-2 rounded-full" style="width: 10%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-4">
+          <button
+            class="px-6 py-3 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-all">
+            <i class="fa fa-print mr-2"></i> 打印报告
+          </button>
+          <button class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all">
+            <i class="fa fa-download mr-2"></i> 下载PDF报告
+          </button>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- CTA区域 -->
+    <section class="gradient-bg text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          准备开始您的矿产勘探分析了吗？
+        </h2>
+        <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto mb-8">
+          利用我们的概率分析平台，提高勘探效率，降低勘探成本
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button id="cta-upload-btn"
+            class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <i class="fa fa-rocket mr-2"></i> 立即开始分析
+          </button>
+          <a href="http://127.0.0.1:5500/index.html#"
+            class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
+            <i class="fa fa-book mr-2"></i> 查看使用教程
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fa fa-mountain text-2xl"></i>
+            <h3 class="text-xl font-bold">饕餮大模型</h3>
+          </div>
+          <p class="text-gray-400 mb-4">
+            利用先进的机器学习技术，为矿产勘探提供数据驱动的决策支持。
+          </p>
+          <div class="flex space-x-4">
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#upload"
+                class="text-gray-400 hover:text-white transition-colors">上传数据</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#model-training"
+                class="text-gray-400 hover:text-white transition-colors">模型训练</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#results"
+                class="text-gray-400 hover:text-white transition-colors">结果展示</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#report"
+                class="text-gray-400 hover:text-white transition-colors">报告分析</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">资源</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">使用文档</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">API参考</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">案例研究</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">常见问题</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">北京市石景山区中国科学院大学</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-phone mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">+86 88 8888 8888</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-envelope mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">contact@miningai.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm">
+            © 2025 饕餮大模型. 保留所有权利.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">服务条款</a>
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">Cookie政策</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 放在 </body> 之前 -->
+  <script type="module" src="main.js"></script>
+
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ("WebSocket" in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (
+              (elem.href && typeof rel != "string") ||
+              rel.length == 0 ||
+              rel.toLowerCase() == "stylesheet"
+            ) {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+              elem.href =
+                url +
+                (url.indexOf("?") >= 0 ? "&" : "?") +
+                "_cacheOverride=" +
+                new Date().valueOf();
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol =
+          window.location.protocol === "http:" ? "ws://" : "wss://";
+        var address =
+          protocol + window.location.host + window.location.pathname + "/ws";
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == "reload") window.location.reload();
+          else if (msg.data == "refreshcss") refreshCSS();
+        };
+        if (
+          sessionStorage &&
+          !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+        ) {
+          console.log("Live reload enabled.");
+          sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+        }
+      })();
+    } else {
+      console.error(
+        "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+      );
+    }
+    // ]]>
+  </script>
+
+  <div id="floating-button" class="floating-button" style="z-index: 999; font-size: 12px">
+    ChatGPT
+  </div>
+  <deepl-input-controller translate="no"><template shadowrootmode="open">
+      <link rel="stylesheet" href="chrome-extension://fancfknaplihpclbhbpclnmmjcjanbaf/build/content.css" />
+      <div dir="ltr" style="visibility: initial !important">
+        <div class="dl-input-translation-container svelte-95aucy">
+          <div></div>
+        </div>
+      </div>
+    </template></deepl-input-controller>
+</body>
+
+</html>
