@@ -2622,7 +2622,7 @@
         }
 
         const session = await ort.InferenceSession.create(modelPath, {
-          // executionProviders: ["cpu"],
+          executionProviders: ["cpu"],
           executionProviders: ['wasm'],
           graphOptimizationLevel: "all",
         });
@@ -2864,3 +2864,4 @@
 </body>
 
 </html>
+
