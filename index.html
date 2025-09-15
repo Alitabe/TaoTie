@@ -2372,7 +2372,7 @@
           );
           document.getElementById("result-image").src = resultData.resultUrl;
 
-            //报告分析
+                                //报告分析
                     // 1. 收集当前结果
                     const reportJson = {
                         miningType: document.getElementById('mining-type').value,
@@ -2391,24 +2391,66 @@
                     };
 
                     // 2. 请求 LLM 生成三段文字
-                    fetch('/api/interpret', {               // ← 后端代理，支持 CORS
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(reportJson)
-                    })
-                        .then(r => r.json())
-                        .then(({ summary, conclusion, suggestion }) => {
-                            // 3. 自动填进报告区域
-                            document.getElementById('auto-summary').textContent = summary;
-                            document.getElementById('auto-conclusion').textContent = conclusion;
-                            document.getElementById('auto-suggestion').innerHTML = suggestion; // 可能带<ul>
+                    // ✅ 前端直调 DeepSeek（key 暴露，仅本地测试）
+                    async function getInterpretation(reportJson) {
+                        const {
+                            miningType, highPercent, mediumPercent, lowPercent, confidence, weights, hotspotCount, areaKm2
+                        } = reportJson;
 
-                            // 4. 平滑滚动到报告
+                        const prompt = `
+你是一位矿产勘探 AI 助手。请根据以下模型预测结果，严格按格式输出三段文字（每段 150~200 字）：
+1 报告摘要
+2 主要结论（用 <li> 包裹）
+3 勘探建议（用 <li> 包裹）
+
+矿产类型：${miningType}
+高概率区域：${highPercent} 中概率：${mediumPercent} 低概率：${lowPercent} 置信度：${confidence}
+数据权重：地球化学 ${weights.geochemical}% 地球物理 ${weights.geophysical}% 钻探 ${weights.drilling}% 遥感 ${weights.remoteSensing}%
+高值区块数：${hotspotCount} 面积：${areaKm2} km²
+`;
+
+                        const res = await fetch('https://api.deepseek.com/v1/chat/completions', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'sk-9GeLnjTHY3oyLRGiiWa9eEPrI224e75RseMzfEcr0bNLFXCl' // ← 把你自己的 key 贴这里
+                            },
+                            body: JSON.stringify({
+                                model: 'deepseek-chat',
+                                messages: [{ role: 'user', content: prompt }],
+                                max_tokens: 800,
+                                temperature: 0.7
+                            })
+                        });
+
+                        if (!res.ok) {
+                            const txt = await res.text();
+                            throw new Error(`DeepSeek ${res.status} ${txt}`);
+                        }
+
+                        const data = await res.json();
+                        const fullText = data.choices[0].message.content;
+
+                        // 简单拆三段
+                        const parts = fullText.split(/\d\s*(报告摘要|主要结论|勘探建议)/);
+                        return {
+                            summary: (parts[2] || '').trim(),
+                            conclusion: (parts[4] || '').trim(),
+                            suggestion: (parts[6] || '').trim()
+                        };
+                    }
+                    getInterpretation(reportJson)
+                        .then(({ summary, conclusion, suggestion }) => {
+                            document.getElementById('auto-summary').textContent = summary;
+                            document.getElementById('auto-conclusion').innerHTML = conclusion;
+                            document.getElementById('auto-suggestion').innerHTML = suggestion;
+
+                            // 平滑滚动到报告
                             document.getElementById('report').scrollIntoView({ behavior: 'smooth' });
                         })
                         .catch(err => {
                             console.error(err);
-                            alert('解读生成失败：' + err.message);
+                            alert('AI 解读生成失败：' + err.message);
                         });
                     //***//
 
@@ -2884,4 +2926,5 @@
 </body>
 
 </html>
+
 
