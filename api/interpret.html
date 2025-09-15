@@ -1,0 +1,51 @@
+// POST /api/interpret
+import express from 'express';
+import cors from 'cors';
+import { config } from 'dotenv';
+config();
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const LLM_URL = 'https://api.moonshot.cn/v1/chat/completions';
+const API_KEY = process.env.KIMI_KEY;   // 保密
+
+app.post('/api/interpret', async (req,res)=>{
+  const {miningType, highPercent, mediumPercent, lowPercent, confidence, weights, hotspotCount, areaKm2} = req.body;
+  const prompt = `
+你是一位矿产勘探 AI 助手。请根据以下模型预测结果，严格按格式输出三段文字，每段 150~200 字：
+1 报告摘要
+2 主要结论（用<li>包裹）
+3 勘探建议（用<li>包裹）
+
+矿产类型：${miningType}
+高概率区域：${highPercent} 中概率：${mediumPercent} 低概率：${lowPercent} 置信度：${confidence}
+数据权重：地球化学 ${weights.geochemical}% 地球物理 ${weights.geophysical}% 钻探 ${weights.drilling}% 遥感 ${weights.remoteSensing}%
+高值区块数：${hotspotCount} 面积：${areaKm2}km²
+`;
+
+  const body={
+    model:'kimi-chat',
+    messages:[{role:'user', content:prompt}],
+    temperature:0.7,
+    max_tokens:1000
+  };
+  const r = await fetch(LLM_URL,{
+    method:'POST',
+    headers:{Authorization:`Bearer ${API_KEY}`,'Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  });
+  if(!r.ok) return res.status(r.status).send({error:'LLM 调用失败'});
+  const data = await r.json();
+  const text = data.choices[0].message.content;
+
+  // 简单解析三段
+  const parts = text.split(/\n*\d\s+/).filter(Boolean);
+  const [summary, conclusion, suggestion] = parts.map(p=>
+    p.trim().replace(/^报告摘要|主要结论|勘探建议/gi,'')
+  );
+  res.json({summary, conclusion, suggestion});
+});
+
+app.listen(3000,()=>console.log('Interpret API on :3000'));
