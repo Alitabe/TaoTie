@@ -3,40 +3,40 @@
 <html lang="zh-CN">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>饕餮大模型</title>
-    <script src="./饕餮大模型_files/saved_resource"></script>
-    <link href="./饕餮大模型_files/font-awesome.min.css" rel="stylesheet" />
-    <script src="./饕餮大模型_files/chart.umd.min.js.下载"></script>
-    <!-- link href="./饕餮大模型_files/css2" rel="stylesheet" -->
-    <!-- 引入FontAwesome图标库（使用CDN） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>饕餮大模型</title>
+  <script src="./饕餮大模型_files/saved_resource"></script>
+  <link href="./饕餮大模型_files/font-awesome.min.css" rel="stylesheet" />
+  <script src="./饕餮大模型_files/chart.umd.min.js.下载"></script>
+  <!-- link href="./饕餮大模型_files/css2" rel="stylesheet" -->
+  <!-- 引入FontAwesome图标库（使用CDN） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#1E40AF", // 深蓝色主色调 - 专业、可靠
-                        secondary: "#3B82F6", // 中蓝色辅助色
-                        accent: "#F97316", // 橙色强调色 - 代表矿产资源
-                        dark: "#1E293B", // 深色背景
-                        light: "#F8FAFC", // 浅色背景
-                    },
-                    fontFamily: {
-                        inter: ["Inter", "sans-serif"],
-                    },
-                },
-            },
-        };
-    </script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1E40AF", // 深蓝色主色调 - 专业、可靠
+            secondary: "#3B82F6", // 中蓝色辅助色
+            accent: "#F97316", // 橙色强调色 - 代表矿产资源
+            dark: "#1E293B", // 深色背景
+            light: "#F8FAFC", // 浅色背景
+          },
+          fontFamily: {
+            inter: ["Inter", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 
-    <style type="text/tailwindcss">
-        @layer utilities {
+  <style type="text/tailwindcss">
+    @layer utilities {
         .content-auto {
           content-visibility: auto;
         }
@@ -50,7 +50,7 @@
         .text-balance {
           text-wrap: balance;
         }
-        .image-container {
+        /* .image-container {
           @apply relative w-full h-[300px] md:h-[400px] bg-gray-100 rounded-lg overflow-hidden border-2 border-dashed border-gray-300 transition-all duration-300;
         }
         .btn-effect {
@@ -64,2210 +64,2170 @@
         }
         .progress-fill {
           @apply h-full bg-primary transition-all duration-300 w-0;
-        }
+        } */
       }
     </style>
 
-    <style>
-        *,
-        ::before,
-        ::after {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
-            --tw-contain-style: ;
-        }
-
-        ::backdrop {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
-            --tw-contain-style: ;
-        }
-
-        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box;
-            border-width: 0;
-            border-style: solid;
-            border-color: #e5e7eb;
-        }
-
-        ::after,
-        ::before {
-            --tw-content: "";
-        }
-
-        :host,
-        html {
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            tab-size: 4;
-            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-                "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            margin: 0;
-            line-height: inherit;
-        }
-
-        hr {
-            height: 0;
-            color: inherit;
-            border-top-width: 1px;
-        }
-
-        abbr:where([title]) {
-            -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: inherit;
-            font-weight: inherit;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit;
-        }
-
-        b,
-        strong {
-            font-weight: bolder;
-        }
-
-        code,
-        kbd,
-        pre,
-        samp {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-                "Liberation Mono", "Courier New", monospace;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            font-size: 1em;
-        }
-
-        small {
-            font-size: 80%;
-        }
-
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline;
-        }
-
-        sub {
-            bottom: -0.25em;
-        }
-
-        sup {
-            top: -0.5em;
-        }
-
-        table {
-            text-indent: 0;
-            border-color: inherit;
-            border-collapse: collapse;
-        }
-
-        button,
-        input,
-        optgroup,
-        select,
-        textarea {
-            font-family: inherit;
-            font-feature-settings: inherit;
-            font-variation-settings: inherit;
-            font-size: 100%;
-            font-weight: inherit;
-            line-height: inherit;
-            letter-spacing: inherit;
-            color: inherit;
-            margin: 0;
-            padding: 0;
-        }
-
-        button,
-        select {
-            text-transform: none;
-        }
-
-        button,
-        input:where([type="button"]),
-        input:where([type="reset"]),
-        input:where([type="submit"]) {
-            -webkit-appearance: button;
-            background-color: transparent;
-            background-image: none;
-        }
-
-        :-moz-focusring {
-            outline: auto;
-        }
-
-        :-moz-ui-invalid {
-            box-shadow: none;
-        }
-
-        progress {
-            vertical-align: baseline;
-        }
-
-        ::-webkit-inner-spin-button,
-        ::-webkit-outer-spin-button {
-            height: auto;
-        }
-
-        [type="search"] {
-            -webkit-appearance: textfield;
-            outline-offset: -2px;
-        }
-
-        ::-webkit-search-decoration {
-            -webkit-appearance: none;
-        }
-
-        ::-webkit-file-upload-button {
-            -webkit-appearance: button;
-            font: inherit;
-        }
-
-        summary {
-            display: list-item;
-        }
-
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
-            margin: 0;
-        }
-
-        fieldset {
-            margin: 0;
-            padding: 0;
-        }
-
-        legend {
-            padding: 0;
-        }
-
-        menu,
-        ol,
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        dialog {
-            padding: 0;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            opacity: 1;
-            color: #9ca3af;
-        }
-
-        [role="button"],
-        button {
-            cursor: pointer;
-        }
-
-        :disabled {
-            cursor: default;
-        }
-
-        audio,
-        canvas,
-        embed,
-        iframe,
-        img,
-        object,
-        svg,
-        video {
-            display: block;
-            vertical-align: middle;
-        }
-
-        img,
-        video {
-            max-width: 100%;
-            height: auto;
-        }
-
-        [hidden]:where(:not([hidden="until-found"])) {
-            display: none;
-        }
-
-        .container {
-            width: 100%;
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                max-width: 640px;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                max-width: 768px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1024px;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px;
-            }
-        }
-
-        @media (min-width: 1536px) {
-            .container {
-                max-width: 1536px;
-            }
-        }
-
-        .fixed {
-            position: fixed;
-        }
-
-        .absolute {
-            position: absolute;
-        }
-
-        .relative {
-            position: relative;
-        }
-
-        .inset-0 {
-            inset: 0px;
-        }
-
-        .top-0 {
-            top: 0px;
-        }
-
-        .z-50 {
-            z-index: 50;
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .mb-1 {
-            margin-bottom: 0.25rem;
-        }
-
-        .mb-12 {
-            margin-bottom: 3rem;
-        }
-
-        .mb-2 {
-            margin-bottom: 0.5rem;
-        }
-
-        .mb-3 {
-            margin-bottom: 0.75rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem;
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem;
-        }
-
-        .mr-1 {
-            margin-right: 0.25rem;
-        }
-
-        .mr-2 {
-            margin-right: 0.5rem;
-        }
-
-        .mr-3 {
-            margin-right: 0.75rem;
-        }
-
-        .mt-1 {
-            margin-top: 0.25rem;
-        }
-
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-
-        .mt-4 {
-            margin-top: 1rem;
-        }
-
-        .block {
-            display: block;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .inline-flex {
-            display: inline-flex;
-        }
-
-        .grid {
-            display: grid;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .aspect-video {
-            aspect-ratio: 16 / 9;
-        }
-
-        .h-2 {
-            height: 0.5rem;
-        }
-
-        .h-8 {
-            height: 2rem;
-        }
-
-        .h-auto {
-            height: auto;
-        }
-
-        .h-full {
-            height: 100%;
-        }
-
-        .min-h-screen {
-            min-height: 100vh;
-        }
-
-        .w-8 {
-            width: 2rem;
-        }
-
-        .w-full {
-            width: 100%;
-        }
-
-        .max-w-2xl {
-            max-width: 42rem;
-        }
-
-        .max-w-3xl {
-            max-width: 48rem;
-        }
-
-        .max-w-6xl {
-            max-width: 72rem;
-        }
-
-        .max-w-full {
-            max-width: 100%;
-        }
-
-        .max-w-xl {
-            max-width: 36rem;
-        }
-
-        .flex-grow {
-            flex-grow: 1;
-        }
-
-        .transform {
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-        }
-
-        .cursor-pointer {
-            cursor: pointer;
-        }
-
-        .appearance-none {
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-
-        .flex-col {
-            flex-direction: column;
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap;
-        }
-
-        .items-start {
-            align-items: flex-start;
-        }
-
-        .items-end {
-            align-items: flex-end;
-        }
-
-        .items-center {
-            align-items: center;
-        }
-
-        .justify-end {
-            justify-content: flex-end;
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .gap-4 {
-            gap: 1rem;
-        }
-
-        .gap-6 {
-            gap: 1.5rem;
-        }
-
-        .gap-8 {
-            gap: 2rem;
-        }
-
-        .space-x-2> :not([hidden])~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-            margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-        }
-
-        .space-x-4> :not([hidden])~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(1rem * var(--tw-space-x-reverse));
-            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-        }
-
-        .space-x-6> :not([hidden])~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-        }
-
-        .space-y-2> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-        }
-
-        .space-y-3> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-        }
-
-        .space-y-4> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-        }
-
-        .space-y-6> :not([hidden])~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
-        }
-
-        .overflow-hidden {
-            overflow: hidden;
-        }
-
-        .rounded-2xl {
-            border-radius: 1rem;
-        }
-
-        .rounded-full {
-            border-radius: 9999px;
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem;
-        }
-
-        .rounded-xl {
-            border-radius: 0.75rem;
-        }
-
-        .border {
-            border-width: 1px;
-        }
-
-        .border-2 {
-            border-width: 2px;
-        }
-
-        .border-b {
-            border-bottom-width: 1px;
-        }
-
-        .border-t {
-            border-top-width: 1px;
-        }
-
-        .border-dashed {
-            border-style: dashed;
-        }
-
-        .border-gray-100 {
-            --tw-border-opacity: 1;
-            border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
-        }
-
-        .border-gray-300 {
-            --tw-border-opacity: 1;
-            border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
-        }
-
-        .border-gray-800 {
-            --tw-border-opacity: 1;
-            border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
-        }
-
-        .bg-accent {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-blue-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-blue-50 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-dark {
-            --tw-bg-opacity: 1;
-            background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-gray-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-gray-200 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-gray-50 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-green-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-green-50 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-light {
-            --tw-bg-opacity: 1;
-            background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-primary {
-            --tw-bg-opacity: 1;
-            background-color: rgb(30 64 175 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-primary\/95 {
-            background-color: rgb(30 64 175 / 0.95);
-        }
-
-        .bg-red-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-white {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-white\/20 {
-            background-color: rgb(255 255 255 / 0.2);
-        }
-
-        .bg-yellow-100 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-yellow-50 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
-        }
-
-        .bg-transparent {
-            background-color: transparent;
-        }
-
-        .bg-gradient-to-t {
-            background-image: linear-gradient(to top, var(--tw-gradient-stops));
-        }
-
-        .from-black\/60 {
-            --tw-gradient-from: rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-        }
-
-        .to-transparent {
-            --tw-gradient-to: transparent var(--tw-gradient-to-position);
-        }
-
-        .object-cover {
-            object-fit: cover;
-        }
-
-        .p-3 {
-            padding: 0.75rem;
-        }
-
-        .p-4 {
-            padding: 1rem;
-        }
-
-        .p-5 {
-            padding: 1.25rem;
-        }
-
-        .p-6 {
-            padding: 1.5rem;
-        }
-
-        .p-8 {
-            padding: 2rem;
-        }
-
-        .px-2\.5 {
-            padding-left: 0.625rem;
-            padding-right: 0.625rem;
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem;
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-
-        .px-8 {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-
-        .py-0\.5 {
-            padding-top: 0.125rem;
-            padding-bottom: 0.125rem;
-        }
-
-        .py-16 {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-        }
-
-        .py-2 {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-
-        .py-3 {
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-        }
-
-        .py-4 {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .pb-6 {
-            padding-bottom: 1.5rem;
-        }
-
-        .pt-12 {
-            padding-top: 3rem;
-        }
-
-        .pt-20 {
-            padding-top: 5rem;
-        }
-
-        .pt-4 {
-            padding-top: 1rem;
-        }
-
-        .pt-6 {
-            padding-top: 1.5rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .font-inter {
-            font-family: Inter, sans-serif;
-        }
-
-        .text-2xl {
-            font-size: 1.5rem;
-            line-height: 2rem;
-        }
-
-        .text-3xl {
-            font-size: 1.875rem;
-            line-height: 2.25rem;
-        }
-
-        .text-5xl {
-            font-size: 3rem;
-            line-height: 1;
-        }
-
-        .text-\[clamp\(1\.5rem\2c 3vw\2c 2\.5rem\)\] {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-        }
-
-        .text-\[clamp\(2rem\2c 5vw\2c 3\.5rem\)\] {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-        }
-
-        .text-lg {
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-        }
-
-        .text-xs {
-            font-size: 0.75rem;
-            line-height: 1rem;
-        }
-
-        .font-bold {
-            font-weight: 700;
-        }
-
-        .font-medium {
-            font-weight: 500;
-        }
-
-        .font-semibold {
-            font-weight: 600;
-        }
-
-        .leading-tight {
-            line-height: 1.25;
-        }
-
-        .text-accent {
-            --tw-text-opacity: 1;
-            color: rgb(249 115 22 / var(--tw-text-opacity, 1));
-        }
-
-        .text-blue-700 {
-            --tw-text-opacity: 1;
-            color: rgb(29 78 216 / var(--tw-text-opacity, 1));
-        }
-
-        .text-blue-800 {
-            --tw-text-opacity: 1;
-            color: rgb(30 64 175 / var(--tw-text-opacity, 1));
-        }
-
-        .text-dark {
-            --tw-text-opacity: 1;
-            color: rgb(30 41 59 / var(--tw-text-opacity, 1));
-        }
-
-        .text-gray-400 {
-            --tw-text-opacity: 1;
-            color: rgb(156 163 175 / var(--tw-text-opacity, 1));
-        }
-
-        .text-gray-500 {
-            --tw-text-opacity: 1;
-            color: rgb(107 114 128 / var(--tw-text-opacity, 1));
-        }
-
-        .text-gray-600 {
-            --tw-text-opacity: 1;
-            color: rgb(75 85 99 / var(--tw-text-opacity, 1));
-        }
-
-        .text-gray-700 {
-            --tw-text-opacity: 1;
-            color: rgb(55 65 81 / var(--tw-text-opacity, 1));
-        }
-
-        .text-gray-800 {
-            --tw-text-opacity: 1;
-            color: rgb(31 41 55 / var(--tw-text-opacity, 1));
-        }
-
-        .text-green-500 {
-            --tw-text-opacity: 1;
-            color: rgb(34 197 94 / var(--tw-text-opacity, 1));
-        }
-
-        .text-green-800 {
-            --tw-text-opacity: 1;
-            color: rgb(22 101 52 / var(--tw-text-opacity, 1));
-        }
-
-        .text-primary {
-            --tw-text-opacity: 1;
-            color: rgb(30 64 175 / var(--tw-text-opacity, 1));
-        }
-
-        .text-red-500 {
-            --tw-text-opacity: 1;
-            color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-        }
-
-        .text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-        }
-
-        .text-white\/80 {
-            color: rgb(255 255 255 / 0.8);
-        }
-
-        .text-yellow-500 {
-            --tw-text-opacity: 1;
-            color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-        }
-
-        .text-yellow-800 {
-            --tw-text-opacity: 1;
-            color: rgb(133 77 14 / var(--tw-text-opacity, 1));
-        }
-
-        .accent-primary {
-            accent-color: #1e40af;
-        }
-
-        .opacity-90 {
-            opacity: 0.9;
-        }
-
-        .shadow-2xl {
-            --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-                var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-        }
-
-        .shadow-lg {
-            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-                0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
-                0 4px 6px -4px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-                var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-        }
-
-        .shadow-md {
-            --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-                0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
-                0 2px 4px -2px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-                var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-        }
-
-        .shadow-xl {
-            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-                0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-                0 8px 10px -6px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-                var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-        }
-
-        .backdrop-blur-sm {
-            --tw-backdrop-blur: blur(4px);
-            -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-        }
-
-        .transition-all {
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-
-        .transition-colors {
-            transition-property: color, background-color, border-color, fill, stroke,
-                -webkit-text-decoration-color;
-            transition-property: color, background-color, border-color,
-                text-decoration-color, fill, stroke;
-            transition-property: color, background-color, border-color,
-                text-decoration-color, fill, stroke, -webkit-text-decoration-color;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-
-        .duration-200 {
-            transition-duration: 200ms;
-        }
-
-        .duration-300 {
-            transition-duration: 300ms;
-        }
-
-        .duration-700 {
-            transition-duration: 700ms;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-        }
-
-        .hover\:scale-105:hover {
-            --tw-scale-x: 1.05;
-            --tw-scale-y: 1.05;
-            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-        }
-
-        .hover\:border-primary:hover {
-            --tw-border-opacity: 1;
-            border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
-        }
-
-        .hover\:bg-accent\/90:hover {
-            background-color: rgb(249 115 22 / 0.9);
-        }
-
-        .hover\:bg-gray-50:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-        }
-
-        .hover\:bg-primary\/90:hover {
-            background-color: rgb(30 64 175 / 0.9);
-        }
-
-        .hover\:bg-white\/30:hover {
-            background-color: rgb(255 255 255 / 0.3);
-        }
-
-        .hover\:text-accent:hover {
-            --tw-text-opacity: 1;
-            color: rgb(249 115 22 / var(--tw-text-opacity, 1));
-        }
-
-        .hover\:text-white:hover {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-        }
-
-        .focus\:border-primary:focus {
-            --tw-border-opacity: 1;
-            border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
-        }
-
-        .focus\:outline-none:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px;
-        }
-
-        .focus\:ring-2:focus {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
-                var(--tw-shadow, 0 0 #0000);
-        }
-
-        .focus\:ring-primary:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(30 64 175 / var(--tw-ring-opacity, 1));
-        }
-
-        @media (min-width: 640px) {
-            .sm\:flex-row {
-                flex-direction: row;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .md\:mt-0 {
-                margin-top: 0px;
-            }
-
-            .md\:flex {
-                display: flex;
-            }
-
-            .md\:hidden {
-                display: none;
-            }
-
-            .md\:w-1\/2 {
-                width: 50%;
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .md\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-            }
-
-            .md\:grid-cols-4 {
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
-
-            .md\:flex-row {
-                flex-direction: row;
-            }
-
-            .md\:py-24 {
-                padding-top: 6rem;
-                padding-bottom: 6rem;
-            }
-
-            .md\:text-2xl {
-                font-size: 1.5rem;
-                line-height: 2rem;
-            }
-
-            .md\:text-4xl {
-                font-size: 2.25rem;
-                line-height: 2.5rem;
-            }
-
-            .md\:text-xl {
-                font-size: 1.25rem;
-                line-height: 1.75rem;
-            }
-        }
-    </style>
+  <style>
+    *,
+    ::before,
+    ::after {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    ::backdrop {
+      --tw-border-spacing-x: 0;
+      --tw-border-spacing-y: 0;
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+      --tw-rotate: 0;
+      --tw-skew-x: 0;
+      --tw-skew-y: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-pan-x: ;
+      --tw-pan-y: ;
+      --tw-pinch-zoom: ;
+      --tw-scroll-snap-strictness: proximity;
+      --tw-gradient-from-position: ;
+      --tw-gradient-via-position: ;
+      --tw-gradient-to-position: ;
+      --tw-ordinal: ;
+      --tw-slashed-zero: ;
+      --tw-numeric-figure: ;
+      --tw-numeric-spacing: ;
+      --tw-numeric-fraction: ;
+      --tw-ring-inset: ;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-color: rgb(59 130 246 / 0.5);
+      --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-colored: 0 0 #0000;
+      --tw-blur: ;
+      --tw-brightness: ;
+      --tw-contrast: ;
+      --tw-grayscale: ;
+      --tw-hue-rotate: ;
+      --tw-invert: ;
+      --tw-saturate: ;
+      --tw-sepia: ;
+      --tw-drop-shadow: ;
+      --tw-backdrop-blur: ;
+      --tw-backdrop-brightness: ;
+      --tw-backdrop-contrast: ;
+      --tw-backdrop-grayscale: ;
+      --tw-backdrop-hue-rotate: ;
+      --tw-backdrop-invert: ;
+      --tw-backdrop-opacity: ;
+      --tw-backdrop-saturate: ;
+      --tw-backdrop-sepia: ;
+      --tw-contain-size: ;
+      --tw-contain-layout: ;
+      --tw-contain-paint: ;
+      --tw-contain-style: ;
+    }
+
+    /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
+    *,
+    ::after,
+    ::before {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: #e5e7eb;
+    }
+
+    ::after,
+    ::before {
+      --tw-content: "";
+    }
+
+    :host,
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -moz-tab-size: 4;
+      tab-size: 4;
+      font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      line-height: inherit;
+    }
+
+    hr {
+      height: 0;
+      color: inherit;
+      border-top-width: 1px;
+    }
+
+    abbr:where([title]) {
+      -webkit-text-decoration: underline dotted;
+      text-decoration: underline dotted;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: inherit;
+      font-weight: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-feature-settings: normal;
+      font-variation-settings: normal;
+      font-size: 1em;
+    }
+
+    small {
+      font-size: 80%;
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    table {
+      text-indent: 0;
+      border-color: inherit;
+      border-collapse: collapse;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-feature-settings: inherit;
+      font-variation-settings: inherit;
+      font-size: 100%;
+      font-weight: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      color: inherit;
+      margin: 0;
+      padding: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    input:where([type="button"]),
+    input:where([type="reset"]),
+    input:where([type="submit"]) {
+      -webkit-appearance: button;
+      background-color: transparent;
+      background-image: none;
+    }
+
+    :-moz-focusring {
+      outline: auto;
+    }
+
+    :-moz-ui-invalid {
+      box-shadow: none;
+    }
+
+    progress {
+      vertical-align: baseline;
+    }
+
+    ::-webkit-inner-spin-button,
+    ::-webkit-outer-spin-button {
+      height: auto;
+    }
+
+    [type="search"] {
+      -webkit-appearance: textfield;
+      outline-offset: -2px;
+    }
+
+    ::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    ::-webkit-file-upload-button {
+      -webkit-appearance: button;
+      font: inherit;
+    }
+
+    summary {
+      display: list-item;
+    }
+
+    blockquote,
+    dd,
+    dl,
+    figure,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    hr,
+    p,
+    pre {
+      margin: 0;
+    }
+
+    fieldset {
+      margin: 0;
+      padding: 0;
+    }
+
+    legend {
+      padding: 0;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    dialog {
+      padding: 0;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      opacity: 1;
+      color: #9ca3af;
+    }
+
+    [role="button"],
+    button {
+      cursor: pointer;
+    }
+
+    :disabled {
+      cursor: default;
+    }
+
+    audio,
+    canvas,
+    embed,
+    iframe,
+    img,
+    object,
+    svg,
+    video {
+      display: block;
+      vertical-align: middle;
+    }
+
+    img,
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    [hidden]:where(:not([hidden="until-found"])) {
+      display: none;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    @media (min-width: 640px) {
+      .container {
+        max-width: 640px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        max-width: 768px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1024px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .container {
+        max-width: 1280px;
+      }
+    }
+
+    @media (min-width: 1536px) {
+      .container {
+        max-width: 1536px;
+      }
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .inset-0 {
+      inset: 0px;
+    }
+
+    .top-0 {
+      top: 0px;
+    }
+
+    .z-50 {
+      z-index: 50;
+    }
+
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .mb-1 {
+      margin-bottom: 0.25rem;
+    }
+
+    .mb-12 {
+      margin-bottom: 3rem;
+    }
+
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+
+    .mr-1 {
+      margin-right: 0.25rem;
+    }
+
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+
+    .mr-3 {
+      margin-right: 0.75rem;
+    }
+
+    .mt-1 {
+      margin-top: 0.25rem;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .inline-flex {
+      display: inline-flex;
+    }
+
+    .grid {
+      display: grid;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .aspect-video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .h-2 {
+      height: 0.5rem;
+    }
+
+    .h-8 {
+      height: 2rem;
+    }
+
+    .h-auto {
+      height: auto;
+    }
+
+    .h-full {
+      height: 100%;
+    }
+
+    .min-h-screen {
+      min-height: 100vh;
+    }
+
+    .w-8 {
+      width: 2rem;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+
+    .max-w-3xl {
+      max-width: 48rem;
+    }
+
+    .max-w-6xl {
+      max-width: 72rem;
+    }
+
+    .max-w-full {
+      max-width: 100%;
+    }
+
+    .max-w-xl {
+      max-width: 36rem;
+    }
+
+    .flex-grow {
+      flex-grow: 1;
+    }
+
+    .transform {
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+    .appearance-none {
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    .flex-wrap {
+      flex-wrap: wrap;
+    }
+
+    .items-start {
+      align-items: flex-start;
+    }
+
+    .items-end {
+      align-items: flex-end;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-end {
+      justify-content: flex-end;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .justify-between {
+      justify-content: space-between;
+    }
+
+    .gap-4 {
+      gap: 1rem;
+    }
+
+    .gap-6 {
+      gap: 1.5rem;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .space-x-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-x-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1rem * var(--tw-space-x-reverse));
+      margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-x-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 0;
+      margin-right: calc(1.5rem * var(--tw-space-x-reverse));
+      margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+    }
+
+    .space-y-2> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-3> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-4> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+    }
+
+    .space-y-6> :not([hidden])~ :not([hidden]) {
+      --tw-space-y-reverse: 0;
+      margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+      margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .rounded-2xl {
+      border-radius: 1rem;
+    }
+
+    .rounded-full {
+      border-radius: 9999px;
+    }
+
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+
+    .border {
+      border-width: 1px;
+    }
+
+    .border-2 {
+      border-width: 2px;
+    }
+
+    .border-b {
+      border-bottom-width: 1px;
+    }
+
+    .border-t {
+      border-top-width: 1px;
+    }
+
+    .border-dashed {
+      border-style: dashed;
+    }
+
+    .border-gray-100 {
+      --tw-border-opacity: 1;
+      border-color: rgb(243 244 246 / var(--tw-border-opacity, 1));
+    }
+
+    .border-gray-300 {
+      --tw-border-opacity: 1;
+      border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+    }
+
+    .border-gray-800 {
+      --tw-border-opacity: 1;
+      border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
+    }
+
+    .bg-accent {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 115 22 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-blue-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(219 234 254 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-blue-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-dark {
+      --tw-bg-opacity: 1;
+      background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-200 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(229 231 235 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-gray-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-green-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(220 252 231 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-green-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-light {
+      --tw-bg-opacity: 1;
+      background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-primary {
+      --tw-bg-opacity: 1;
+      background-color: rgb(30 64 175 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-primary\/95 {
+      background-color: rgb(30 64 175 / 0.95);
+    }
+
+    .bg-red-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-white {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-white\/20 {
+      background-color: rgb(255 255 255 / 0.2);
+    }
+
+    .bg-yellow-100 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 249 195 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-yellow-50 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1));
+    }
+
+    .bg-transparent {
+      background-color: transparent;
+    }
+
+    .bg-gradient-to-t {
+      background-image: linear-gradient(to top, var(--tw-gradient-stops));
+    }
+
+    .from-black\/60 {
+      --tw-gradient-from: rgb(0 0 0 / 0.6) var(--tw-gradient-from-position);
+      --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    }
+
+    .to-transparent {
+      --tw-gradient-to: transparent var(--tw-gradient-to-position);
+    }
+
+    .object-cover {
+      object-fit: cover;
+    }
+
+    .p-3 {
+      padding: 0.75rem;
+    }
+
+    .p-4 {
+      padding: 1rem;
+    }
+
+    .p-5 {
+      padding: 1.25rem;
+    }
+
+    .p-6 {
+      padding: 1.5rem;
+    }
+
+    .p-8 {
+      padding: 2rem;
+    }
+
+    .px-2\.5 {
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .py-0\.5 {
+      padding-top: 0.125rem;
+      padding-bottom: 0.125rem;
+    }
+
+    .py-16 {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+
+    .py-4 {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .pb-6 {
+      padding-bottom: 1.5rem;
+    }
+
+    .pt-12 {
+      padding-top: 3rem;
+    }
+
+    .pt-20 {
+      padding-top: 5rem;
+    }
+
+    .pt-4 {
+      padding-top: 1rem;
+    }
+
+    .pt-6 {
+      padding-top: 1.5rem;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .font-inter {
+      font-family: Inter, sans-serif;
+    }
+
+    .text-2xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .text-3xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .text-5xl {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .text-\[clamp\(1\.5rem\2c 3vw\2c 2\.5rem\)\] {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    .text-\[clamp\(2rem\2c 5vw\2c 3\.5rem\)\] {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .text-lg {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .text-sm {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .text-xl {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .text-xs {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+
+    .font-bold {
+      font-weight: 700;
+    }
+
+    .font-medium {
+      font-weight: 500;
+    }
+
+    .font-semibold {
+      font-weight: 600;
+    }
+
+    .leading-tight {
+      line-height: 1.25;
+    }
+
+    .text-accent {
+      --tw-text-opacity: 1;
+      color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+    }
+
+    .text-blue-700 {
+      --tw-text-opacity: 1;
+      color: rgb(29 78 216 / var(--tw-text-opacity, 1));
+    }
+
+    .text-blue-800 {
+      --tw-text-opacity: 1;
+      color: rgb(30 64 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-dark {
+      --tw-text-opacity: 1;
+      color: rgb(30 41 59 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-400 {
+      --tw-text-opacity: 1;
+      color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-500 {
+      --tw-text-opacity: 1;
+      color: rgb(107 114 128 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-600 {
+      --tw-text-opacity: 1;
+      color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-700 {
+      --tw-text-opacity: 1;
+      color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+    }
+
+    .text-gray-800 {
+      --tw-text-opacity: 1;
+      color: rgb(31 41 55 / var(--tw-text-opacity, 1));
+    }
+
+    .text-green-500 {
+      --tw-text-opacity: 1;
+      color: rgb(34 197 94 / var(--tw-text-opacity, 1));
+    }
+
+    .text-green-800 {
+      --tw-text-opacity: 1;
+      color: rgb(22 101 52 / var(--tw-text-opacity, 1));
+    }
+
+    .text-primary {
+      --tw-text-opacity: 1;
+      color: rgb(30 64 175 / var(--tw-text-opacity, 1));
+    }
+
+    .text-red-500 {
+      --tw-text-opacity: 1;
+      color: rgb(239 68 68 / var(--tw-text-opacity, 1));
+    }
+
+    .text-white {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    }
+
+    .text-white\/80 {
+      color: rgb(255 255 255 / 0.8);
+    }
+
+    .text-yellow-500 {
+      --tw-text-opacity: 1;
+      color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+    }
+
+    .text-yellow-800 {
+      --tw-text-opacity: 1;
+      color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+    }
+
+    .accent-primary {
+      accent-color: #1e40af;
+    }
+
+    .opacity-90 {
+      opacity: 0.9;
+    }
+
+    .shadow-2xl {
+      --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+      --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-lg {
+      --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+        0 4px 6px -4px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-md {
+      --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .shadow-xl {
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    }
+
+    .backdrop-blur-sm {
+      --tw-backdrop-blur: blur(4px);
+      -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+      backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    }
+
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .transition-colors {
+      transition-property: color, background-color, border-color, fill, stroke,
+        -webkit-text-decoration-color;
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke;
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    .duration-200 {
+      transition-duration: 200ms;
+    }
+
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+
+    .duration-700 {
+      transition-duration: 700ms;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    }
+
+    .hover\:scale-105:hover {
+      --tw-scale-x: 1.05;
+      --tw-scale-y: 1.05;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .hover\:border-primary:hover {
+      --tw-border-opacity: 1;
+      border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
+    }
+
+    .hover\:bg-accent\/90:hover {
+      background-color: rgb(249 115 22 / 0.9);
+    }
+
+    .hover\:bg-gray-50:hover {
+      --tw-bg-opacity: 1;
+      background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+    }
+
+    .hover\:bg-primary\/90:hover {
+      background-color: rgb(30 64 175 / 0.9);
+    }
+
+    .hover\:bg-white\/30:hover {
+      background-color: rgb(255 255 255 / 0.3);
+    }
+
+    .hover\:text-accent:hover {
+      --tw-text-opacity: 1;
+      color: rgb(249 115 22 / var(--tw-text-opacity, 1));
+    }
+
+    .hover\:text-white:hover {
+      --tw-text-opacity: 1;
+      color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    }
+
+    .focus\:border-primary:focus {
+      --tw-border-opacity: 1;
+      border-color: rgb(30 64 175 / var(--tw-border-opacity, 1));
+    }
+
+    .focus\:outline-none:focus {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .focus\:ring-2:focus {
+      --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+      --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+      box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow),
+        var(--tw-shadow, 0 0 #0000);
+    }
+
+    .focus\:ring-primary:focus {
+      --tw-ring-opacity: 1;
+      --tw-ring-color: rgb(30 64 175 / var(--tw-ring-opacity, 1));
+    }
+
+    @media (min-width: 640px) {
+      .sm\:flex-row {
+        flex-direction: row;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .md\:mt-0 {
+        margin-top: 0px;
+      }
+
+      .md\:flex {
+        display: flex;
+      }
+
+      .md\:hidden {
+        display: none;
+      }
+
+      .md\:w-1\/2 {
+        width: 50%;
+      }
+
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .md\:flex-row {
+        flex-direction: row;
+      }
+
+      .md\:py-24 {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .md\:text-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      .md\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      .md\:text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="font-inter bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <!-- 导航栏 -->
-    <header id="navbar"
-        class="fixed w-full top-0 z-50 transition-all duration-300 bg-primary/95 backdrop-blur-sm shadow-md">
-        <nav class="gradient-bg text-white shadow-md">
-            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <img src="./饕餮大模型_files/wukan.png" alt="公司" class="h-8 w-auto mr-2">
-                    <i class="fa fa-mountain text-2xl"></i>
-                    <h1 class="text-xl md:text-2xl font-bold">饕餮大模型</h1>
-                </div>
+  <!-- 导航栏 -->
+  <header id="navbar"
+    class="fixed w-full top-0 z-50 transition-all duration-300 bg-primary/95 backdrop-blur-sm shadow-md">
+    <nav class="gradient-bg text-white shadow-md">
+      <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+          <i class="fa fa-mountain text-2xl"></i>
+          <h1 class="text-xl md:text-2xl font-bold">饕餮大模型</h1>
+        </div>
 
-                <div class="hidden md:flex items-center space-x-6">
-                    <button id="navbar-upload-btn"
-                        class="hover:text-accent transition-colors duration-200">上传数据</button>
-                    <button id="navbar-model-training-btn"
-                        class="hover:text-accent transition-colors duration-200">模型训练</button>
-                    <button id="navbar-results-btn"
-                        class="hover:text-accent transition-colors duration-200">结果展示</button>
-                    <button id="navbar-report-btn"
-                        class="hover:text-accent transition-colors duration-200">报告分析</button>
-                </div>
+        <div class="hidden md:flex items-center space-x-6">
+          <button id="navbar-upload-btn" class="hover:text-accent transition-colors duration-200">上传数据</button>
+          <button id="navbar-model-training-btn" class="hover:text-accent transition-colors duration-200">模型训练</button>
+          <button id="navbar-results-btn" class="hover:text-accent transition-colors duration-200">结果展示</button>
+          <button id="navbar-report-btn" class="hover:text-accent transition-colors duration-200">报告分析</button>
+        </div>
 
-                <div class="md:hidden">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <i class="fa fa-bars text-xl"></i>
-                    </button>
-                </div>
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 移动端菜单 -->
+      <div id="mobile-menu" class="md:hidden hidden bg-primary/95 backdrop-blur-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+          <a href="http://127.0.0.1:5500/index.html#upload"
+            class="py-2 hover:text-accent transition-colors duration-200">上传数据</a>
+          <a href="http://127.0.0.1:5500/index.html#model-training"
+            class="py-2 hover:text-accent transition-colors duration-200">模型训练</a>
+          <a href="http://127.0.0.1:5500/index.html#results"
+            class="py-2 hover:text-accent transition-colors duration-200">结果展示</a>
+          <a href="http://127.0.0.1:5500/index.html#report"
+            class="py-2 hover:text-accent transition-colors duration-200">报告分析</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="flex-grow pt-20">
+    <!-- 英雄区域 -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="md:w-1/2 space-y-4">
+            <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
+              饕餮大模型<br />矿产勘探概率分析系统
+            </h2>
+            <p class="text-lg md:text-xl opacity-90 max-w-xl">
+              利用先进机器学习技术，分析地质数据，预测潜在矿产资源分布概率，助力高效勘探决策。
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button id="btn-start-analysis"
+                class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                开始分析
+              </button>
+              <button id="btn-end-analysis"
+                class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
+                查看示例结果
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center">
+            <img src="./饕餮大模型_files/taotie.png" alt="矿产勘探数据分析可视化"
+              class="rounded-xl shadow-2xl max-w-full h-auto transform transition-all duration-700 hover:scale-105" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 上传数据部分 -->
+    <section id="upload" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            上传数据
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            上传您的地质勘探数据，系统支持多种数据格式，包括CSV、GeoJSON和Shapefile等常见地质数据格式。
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-light rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div class="space-y-6">
+            <div
+              class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-primary transition-colors duration-300 cursor-pointer"
+              id="drop-area">
+              <i class="fa fa-cloud-upload text-5xl text-gray-400 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">
+                拖放您的数据文件到这里
+              </h3>
+              <p class="text-gray-500 mb-4">或者</p>
+              <label
+                class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer inline-flex items-center">
+                <i class="fa fa-folder-open mr-2"></i> 浏览文件
+                <input type="file" class="hidden" multiple="" id="file-input" />
+              </label>
+              <p class="text-sm text-gray-400 mt-4">
+                支持格式: CSV, GeoJSON, Shapefile, XLSX
+              </p>
             </div>
 
-            <!-- 移动端菜单 -->
-            <div id="mobile-menu" class="md:hidden hidden bg-primary/95 backdrop-blur-sm">
-                <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
-                    <a href="http://127.0.0.1:5500/index.html#upload"
-                        class="py-2 hover:text-accent transition-colors duration-200">上传数据</a>
-                    <a href="http://127.0.0.1:5500/index.html#model-training"
-                        class="py-2 hover:text-accent transition-colors duration-200">模型训练</a>
-                    <a href="http://127.0.0.1:5500/index.html#results"
-                        class="py-2 hover:text-accent transition-colors duration-200">结果展示</a>
-                    <a href="http://127.0.0.1:5500/index.html#report"
-                        class="py-2 hover:text-accent transition-colors duration-200">报告分析</a>
+            <div>
+              <h3 class="text-lg font-medium mb-3">已上传文件</h3>
+              <div id="file-list" class="space-y-3">
+                <div class="hidden text-center text-gray-500 py-4" id="empty-file-list">
+                  暂无上传文件
                 </div>
+              </div>
             </div>
-        </nav>
-    </header>
 
-    <!-- 主内容区 -->
-    <main class="flex-grow pt-20">
-        <!-- 英雄区域 -->
-        <section class="gradient-bg text-white py-16 md:py-24">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div class="md:w-1/2 space-y-4">
-                        <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight">
-                            饕餮大模型<br />矿产勘探概率分析系统
-                        </h2>
-                        <p class="text-lg md:text-xl opacity-90 max-w-xl">
-                            利用先进机器学习技术，分析地质数据，预测潜在矿产资源分布概率，助力高效勘探决策。
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-4">
-                            <button id="btn-start-analysis"
-                                class="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                开始分析
-                            </button>
-                            <button id="btn-end-analysis"
-                                class="bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
-                                查看示例结果
-                            </button>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2 flex justify-center">
-                        <img src="./饕餮大模型_files/taotie.png" alt="矿产勘探数据分析可视化"
-                            class="rounded-xl shadow-2xl max-w-full h-auto transform transition-all duration-700 hover:scale-105" />
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="mining-type" class="block text-sm font-medium text-gray-700 mb-1">矿产类型</label>
+                <select id="mining-type"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                  <option value="gold">铜矿</option>
+                  <option value="copper">金矿</option>
+                  <option value="iron">铁矿</option>
+                  <option value="coal">煤矿</option>
+                  <option value="other">其他矿产</option>
+                </select>
+              </div>
             </div>
-        </section>
 
-        <!-- 上传数据部分 -->
-        <section id="upload" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
-                        上传数据
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        上传您的地质勘探数据，系统支持多种数据格式，包括CSV、GeoJSON和Shapefile等常见地质数据格式。
-                    </p>
-                </div>
-
-                <div class="max-w-3xl mx-auto bg-light rounded-2xl shadow-xl p-8 border border-gray-100">
-                    <div class="space-y-6">
-                        <div class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-primary transition-colors duration-300 cursor-pointer"
-                            id="drop-area">
-                            <i class="fa fa-cloud-upload text-5xl text-gray-400 mb-4"></i>
-                            <h3 class="text-xl font-semibold mb-2">
-                                拖放您的数据文件到这里
-                            </h3>
-                            <p class="text-gray-500 mb-4">或者</p>
-                            <label
-                                class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 cursor-pointer inline-flex items-center">
-                                <i class="fa fa-folder-open mr-2"></i> 浏览文件
-                                <input type="file" class="hidden" multiple="" id="file-input" />
-                            </label>
-                            <p class="text-sm text-gray-400 mt-4">
-                                支持格式: CSV, GeoJSON, Shapefile, XLSX
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-medium mb-3">已上传文件</h3>
-                            <div id="file-list" class="space-y-3">
-                                <div class="hidden text-center text-gray-500 py-4" id="empty-file-list">
-                                    暂无上传文件
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="mining-type"
-                                    class="block text-sm font-medium text-gray-700 mb-1">矿产类型</label>
-                                <select id="mining-type"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
-                                    <option value="gold">铜矿</option>
-                                    <option value="copper">金矿</option>
-                                    <option value="iron">铁矿</option>
-                                    <option value="coal">煤矿</option>
-                                    <option value="other">其他矿产</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="data-description"
-                                class="block text-sm font-medium text-gray-700 mb-1">数据描述</label>
-                            <textarea id="data-description" rows="3"
-                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                                placeholder="请简要描述您的数据来源和特点..."></textarea>
-                        </div>
-
-                        <div class="flex justify-end">
-                            <button id="upload-btn"
-                                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
-                                <i class="fa fa-upload mr-2"></i> 上传数据
-                            </button>
-                        </div>
-
-                        <!-- 状态提示 -->
-                        <div class="mt-4 text-sm text-gray-600">
-                            预处理状态：<span id="preprocessStatus">未开始</span>
-                        </div>
-                        <div class="progress-bar mt-2">
-                            <div id="preprocessProgress" class="progress-fill w-0"></div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+              <label for="data-description" class="block text-sm font-medium text-gray-700 mb-1">数据描述</label>
+              <textarea id="data-description" rows="3"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                placeholder="请简要描述您的数据来源和特点..."></textarea>
             </div>
-        </section>
 
-        <!-- 模型训练部分 -->
-        <section id="model-training" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
-                        模型训练
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        配置模型参数并开始训练，系统将使用饕餮大模型分析您上传的数据。
-                    </p>
-                </div>
-
-                <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-lg font-medium mb-4">数据权重设置</h3>
-                            <p class="text-sm text-gray-500 mb-4">
-                                为不同类型的数据分配权重，权重越高表示该类型数据对最终结果影响越大
-                            </p>
-
-                            <div id="data-weight-container" class="space-y-4">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="flex justify-between items-center">
-                                            <span class="text-sm font-medium text-gray-700">地球化学数据</span>
-                                            <span class="text-sm text-gray-500" id="geochemical-weight-value">50%</span>
-                                        </label>
-                                        <input type="range" min="0" max="100" value="50"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
-                                            data-type="geochemical" />
-                                    </div>
-
-                                    <div>
-                                        <label class="flex justify-between items-center">
-                                            <span class="text-sm font-medium text-gray-700">地球物理数据</span>
-                                            <span class="text-sm text-gray-500" id="geophysical-weight-value">30%</span>
-                                        </label>
-                                        <input type="range" min="0" max="100" value="30"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
-                                            data-type="geophysical" />
-                                    </div>
-
-                                    <div>
-                                        <label class="flex justify-between items-center">
-                                            <span class="text-sm font-medium text-gray-700">钻探数据</span>
-                                            <span class="text-sm text-gray-500" id="drilling-weight-value">10%</span>
-                                        </label>
-                                        <input type="range" min="0" max="100" value="10"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
-                                            data-type="drilling" />
-                                    </div>
-
-                                    <div>
-                                        <label class="flex justify-between items-center">
-                                            <span class="text-sm font-medium text-gray-700">遥感数据</span>
-                                            <span class="text-sm text-gray-500"
-                                                id="remote-sensing-weight-value">10%</span>
-                                        </label>
-                                        <input type="range" min="0" max="100" value="10"
-                                            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
-                                            data-type="remote-sensing" />
-                                    </div>
-                                </div>
-
-                                <div class="bg-blue-50 p-3 rounded-lg text-sm">
-                                    <p class="text-blue-700">
-                                        <i class="fa fa-info-circle mr-1"></i>
-                                        提示：所有数据类型的权重之和应为100%
-                                    </p>
-                                    <div class="mt-2 flex justify-between">
-                                        <span class="text-xs text-gray-500">总权重</span>
-                                        <span class="text-xs font-medium" id="total-weight">100%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-gray-100 pt-6">
-                            <h3 class="text-lg font-medium mb-4">模型配置</h3>
-
-                            <div class="space-y-4">
-                                <div>
-                                    <label for="model-type"
-                                        class="block text-sm font-medium text-gray-700 mb-1">模型类型</label>
-                                    <select id="model-type"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
-                                        <option value="model.onnx">饕餮大模型-1.0</option>
-                                        <option value="taotie-advanced">饕餮大模型-2.0</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label for="prediction-type"
-                                        class="block text-sm font-medium text-gray-700 mb-1">预测类型</label>
-                                    <select id="prediction-type"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
-                                        <option value="probability">概率分布预测</option>
-                                        <option value="classification">资源类型分类</option>
-                                        <option value="regression">储量估计</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-gray-100 pt-6">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <h4 class="font-medium">准备训练模型</h4>
-                                    <p class="text-sm text-gray-500">
-                                        点击下方按钮开始使用饕餮大模型进行预测
-                                    </p>
-                                </div>
-                                <button id="train-model-btn"
-                                    class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
-                                    <i class="fa fa-play mr-2"></i> 开始预测
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 预测进度模态框 -->
-                        <div id="prediction-modal"
-                            class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-                            <div class="bg-white rounded-xl p-6 w-11/12 max-w-md">
-                                <h3 class="text-lg font-semibold mb-2">模型推理中...</h3>
-                                <p class="text-sm text-gray-600 mb-4">正在提取特征并进行预测，请稍候</p>
-                                <div class="w-full bg-gray-200 rounded-full h-3">
-                                    <div id="prediction-progress" class="bg-primary h-3 rounded-full" style="width: 0%">
-                                    </div>
-                                </div>
-                                <p id="prediction-progress-text" class="text-right text-xs text-gray-500 mt-1">0%</p>
-                                <div class="mt-4 text-right">
-                                    <button id="cancel-prediction"
-                                        class="text-sm text-gray-600 hover:text-red-500">取消</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="flex justify-end">
+              <button id="upload-btn"
+                class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
+                <i class="fa fa-upload mr-2"></i> 上传数据
+              </button>
             </div>
-        </section>
 
-        <!-- 结果展示部分 -->
-        <section id="results" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
-                        结果展示
-                    </h2>
-                    <!-- <p class="text-gray-600 max-w-2xl mx-auto">
+            <!-- 状态提示 -->
+            <div class="mt-4 text-sm text-gray-600">
+              预处理状态：<span id="preprocessStatus">未开始</span>
+            </div>
+            <div class="progress-bar mt-2">
+              <div id="preprocessProgress" class="progress-fill w-0"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 模型训练部分 -->
+    <section id="model-training" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            模型训练
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            配置模型参数并开始训练，系统将使用饕餮大模型分析您上传的数据。
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-medium mb-4">数据权重设置</h3>
+              <p class="text-sm text-gray-500 mb-4">
+                为不同类型的数据分配权重，权重越高表示该类型数据对最终结果影响越大
+              </p>
+
+              <div id="data-weight-container" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">地球化学数据</span>
+                      <span class="text-sm text-gray-500" id="geochemical-weight-value">50%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="50"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="geochemical" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">地球物理数据</span>
+                      <span class="text-sm text-gray-500" id="geophysical-weight-value">30%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="30"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="geophysical" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">钻探数据</span>
+                      <span class="text-sm text-gray-500" id="drilling-weight-value">10%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="10"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="drilling" />
+                  </div>
+
+                  <div>
+                    <label class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-gray-700">遥感数据</span>
+                      <span class="text-sm text-gray-500" id="remote-sensing-weight-value">10%</span>
+                    </label>
+                    <input type="range" min="0" max="100" value="10"
+                      class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary data-weight-slider"
+                      data-type="remote-sensing" />
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-lg text-sm">
+                  <p class="text-blue-700">
+                    <i class="fa fa-info-circle mr-1"></i>
+                    提示：所有数据类型的权重之和应为100%
+                  </p>
+                  <div class="mt-2 flex justify-between">
+                    <span class="text-xs text-gray-500">总权重</span>
+                    <span class="text-xs font-medium" id="total-weight">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6">
+              <h3 class="text-lg font-medium mb-4">模型配置</h3>
+
+              <div class="space-y-4">
+                <div>
+                  <label for="model-type" class="block text-sm font-medium text-gray-700 mb-1">模型类型</label>
+                  <select id="model-type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                    <option value="model.onnx">饕餮大模型-1.0</option>
+                    <option value="taotie-advanced">饕餮大模型-2.0</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="prediction-type" class="block text-sm font-medium text-gray-700 mb-1">预测类型</label>
+                  <select id="prediction-type"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-all">
+                    <option value="probability">概率分布预测</option>
+                    <option value="classification">资源类型分类</option>
+                    <option value="regression">储量估计</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="border-t border-gray-100 pt-6">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h4 class="font-medium">准备训练模型</h4>
+                  <p class="text-sm text-gray-500">
+                    点击下方按钮开始使用饕餮大模型进行预测
+                  </p>
+                </div>
+                <button id="train-model-btn"
+                  class="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-md flex items-center">
+                  <i class="fa fa-play mr-2"></i> 开始预测
+                </button>
+              </div>
+            </div>
+
+            <!-- 进度条容器 -->
+            <div id="prediction-progress-container" class="hidden mt-4">
+              <div class="text-sm text-gray-700 mb-1">模型推理中...</div>
+              <div class="w-full bg-gray-200 rounded-full h-2.5">
+                <div id="prediction-progress-bar" class="bg-primary h-2.5 rounded-full" style="width: 0%"></div>
+              </div>
+              <div id="prediction-progress-text" class="text-xs text-gray-500 mt-1 text-right">0%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 结果展示部分 -->
+    <section id="results" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            结果展示
+          </h2>
+          <!-- <p class="text-gray-600 max-w-2xl mx-auto">
               基于输入数据位置信息，展示带有经纬度的实际地图和矿产存在概率热力图
             </p>-->
-                </div>
-
-                <div class="max-w-6xl mx-auto">
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                        <div class="aspect-video bg-gray-100 flex items-center justify-center relative">
-                            <!-- 实际地图将在这里加载 -->
-                            <img id="result-image" src="./饕餮大模型_files/v2.jpg" alt="矿产存在概率分布图"
-                                class="max-w-full h-auto max-h-[70vh] object-contain mx-auto rounded-lg" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                                <div class="p-6 text-white">
-                                    <h3 class="text-xl font-semibold mb-2">
-                                        矿产存在概率分布图
-                                    </h3>
-                                    <p class="text-white/80 max-w-xl">
-                                        颜色越深表示存在矿产的概率越高，红色区域表示高概率存在矿产资源的区域。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <div class="text-sm text-gray-500">高概率区域占比</div>
-                                    <div class="text-2xl font-bold text-accent mt-1">12.3%</div>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <div class="text-sm text-gray-500">中概率区域占比</div>
-                                    <div class="text-2xl font-bold text-yellow-500 mt-1">
-                                        35.7%
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <div class="text-sm text-gray-500">低概率区域占比</div>
-                                    <div class="text-2xl font-bold text-green-500 mt-1">
-                                        42.1%
-                                    </div>
-                                </div>
-                                <div class="bg-gray-50 p-4 rounded-lg">
-                                    <div class="text-sm text-gray-500">预测置信度</div>
-                                    <div class="text-2xl font-bold text-primary mt-1">
-                                        87.2%
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 报告分析部分 -->
-        <section id="report" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
-                        报告分析
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        生成详细的分析报告，包含结果解释、建议和数据洞察，助力决策制定。
-                    </p>
-                </div>
-
-                <div class="max-w-6xl mx-auto">
-                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
-                        <div class="p-6 border-b border-gray-100">
-                            <h3 class="text-xl font-semibold mb-2">综合分析报告</h3>
-                            <p class="text-gray-600">
-                                基于您上传的数据和模型训练结果生成的专业分析报告
-                            </p>
-                        </div>
-
-                        <div class="p-6">
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                                <div class="bg-blue-50 rounded-xl p-5">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <h4 class="font-medium text-gray-800">报告摘要</h4>
-                                        <span
-                                            class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800">关键发现</span>
-                                    </div>
-                                    <!-- <p class="text-gray-600 text-sm">
-                                        本分析基于2025年采集的遥感数据，使用饕餮大模型预测了研究区域内铜矿存在的概率分布。模型准确率达到87.2%，显示出良好的预测性能。
-                                    </p> -->
-                                    <p class="text-gray-600 text-sm" id="auto-summary">
-                                        <span class="text-gray-400">正在生成摘要…</span>
-                                    </p>
-                                </div>
-
-                                <div class="bg-green-50 rounded-xl p-5">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <h4 class="font-medium text-gray-800">主要结论</h4>
-                                        <span
-                                            class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800">1个结论</span>
-                                    </div>
-                                    <ul class="text-gray-600 text-sm space-y-2" id="auto-conclusion">
-                                        <li class="flex items-start">
-                                            <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
-                                            <span>研究区域内红色部分显示出较高的铜矿存在概率</span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="bg-yellow-50 rounded-xl p-5">
-                                    <div class="flex items-center justify-between mb-4">
-                                        <h4 class="font-medium text-gray-800">勘探建议</h4>
-                                        <span
-                                            class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800">优先级</span>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
-                                                <i class="fa fa-flag text-red-500"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-medium">高优先级区域</p>
-                                                <p class="text-xs text-gray-500">
-                                                    4处
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
-                                                <i class="fa fa-exclamation-triangle text-yellow-500"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-medium">中优先级区域</p>
-                                                <p class="text-xs text-gray-500">
-                                                    7处
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div
-                                                class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
-                                                <i class="fa fa-map-o text-green-500"></i>
-                                            </div>
-                                            <div>
-                                                <p class="text-sm font-medium">低优先级区域</p>
-                                                <p class="text-xs text-gray-500">
-                                                    12处
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="border-t border-gray-100 pt-6">
-                                <h4 class="font-semibold mb-4">数据权重分析</h4>
-                                <p class="text-gray-600 text-sm mb-4">
-                                    不同类型数据对最终预测结果的贡献权重：
-                                </p>
-
-                                <div class="space-y-3">
-                                    <div>
-                                        <div class="flex justify-between text-sm mb-1">
-                                            <span>地球化学数据</span>
-                                            <span id="report-geochemical-weight">50%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2">
-                                            <div id="report-geochemical-bar" class="bg-accent h-2 rounded-full"
-                                                style="width: 50%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-sm mb-1">
-                                            <span>地球物理数据</span>
-                                            <span id="report-geophysical-weight">30%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2">
-                                            <div id="report-geophysical-bar" class="bg-accent h-2 rounded-full"
-                                                style="width: 30%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-sm mb-1">
-                                            <span>钻探数据</span>
-                                            <span id="report-drilling-weight">10%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2">
-                                            <div id="report-drilling-bar" class="bg-accent h-2 rounded-full"
-                                                style="width: 10%"></div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="flex justify-between text-sm mb-1">
-                                            <span>遥感数据</span>
-                                            <span id="report-remote-sensing-weight">10%</span>
-                                        </div>
-                                        <div class="w-full bg-gray-200 rounded-full h-2">
-                                            <div id="report-remote-sensing-bar" class="bg-accent h-2 rounded-full"
-                                                style="width: 10%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-end space-x-4">
-                    <!-- <button
-            class="px-6 py-3 border border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 transition-all">
-            <i class="fa fa-print mr-2"></i> 打印报告
-          </button> -->
-                    <button
-                        class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all">
-                        <i class="fa fa-download mr-2"></i> 下载PDF报告
-                    </button>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- CTA区域 -->
-        <section class="gradient-bg text-white py-16">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    准备开始您的矿产勘探分析了吗？
-                </h2>
-                <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto mb-8">
-                    利用我们的概率分析平台，提高勘探效率，降低勘探成本
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <button id="cta-upload-btn"
-                        class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
-                        <i class="fa fa-rocket mr-2"></i> 立即开始分析
-                    </button>
-                    <a href="http://127.0.0.1:5500/index.html#"
-                        class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
-                        <i class="fa fa-book mr-2"></i> 查看使用教程
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="bg-dark text-white pt-12 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i class="fa fa-mountain text-2xl"></i>
-                        <h3 class="text-xl font-bold">饕餮大模型</h3>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        利用先进的机器学习技术，为矿产勘探提供数据驱动的决策支持。
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-400 hover:text-white transition-colors">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">快速链接</h4>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#upload"
-                                class="text-gray-400 hover:text-white transition-colors">上传数据</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#model-training"
-                                class="text-gray-400 hover:text-white transition-colors">模型训练</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#results"
-                                class="text-gray-400 hover:text-white transition-colors">结果展示</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#report"
-                                class="text-gray-400 hover:text-white transition-colors">报告分析</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">资源</h4>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#"
-                                class="text-gray-400 hover:text-white transition-colors">使用文档</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#"
-                                class="text-gray-400 hover:text-white transition-colors">API参考</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#"
-                                class="text-gray-400 hover:text-white transition-colors">案例研究</a>
-                        </li>
-                        <li>
-                            <a href="http://127.0.0.1:5500/index.html#"
-                                class="text-gray-400 hover:text-white transition-colors">常见问题</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">联系我们</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fa fa-map-marker mt-1 mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">北京市石景山区中国科学院大学</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-phone mt-1 mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">+86 88 8888 8888</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fa fa-envelope mt-1 mr-2 text-gray-400"></i>
-                            <span class="text-gray-400">contact@miningai.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 pt-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm">
-                        © 2025 饕餮大模型. 保留所有权利.
-                    </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-500 hover:text-white text-sm transition-colors">服务条款</a>
-                        <a href="http://127.0.0.1:5500/index.html#"
-                            class="text-gray-500 hover:text-white text-sm transition-colors">Cookie政策</a>
-                    </div>
-                </div>
-            </div>
         </div>
-    </footer>
 
-    <!-- 放在 </body> 之前 -->
-    <script>
-        // 全局变量存储处理过程中的数据
-        let processedData = null;
-        let originalImageData = null; // 存原始 ImageData
-        let dinov2Session = null;   // 复用 session，避免重复加载
-        let predictionCancelled = false;
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div class="aspect-video bg-gray-100 flex items-center justify-center relative">
+              <!-- 实际地图将在这里加载 -->
+              <img id="result-image" src="./饕餮大模型_files/v2.jpg" alt="矿产存在概率分布图"
+                class="max-w-full h-auto max-h-[70vh] object-contain mx-auto rounded-lg" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                <div class="p-6 text-white">
+                  <h3 class="text-xl font-semibold mb-2">
+                    矿产存在概率分布图
+                  </h3>
+                  <p class="text-white/80 max-w-xl">
+                    颜色越深表示存在矿产的概率越高，红色区域表示高概率存在矿产资源的区域。
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        // 导航栏滚动效果
-        window.addEventListener("scroll", function () {
-            const navbar = document.getElementById("navbar");
-            if (window.scrollY > 50) {
-                navbar.classList.add(
-                    "bg-primary/95",
-                    "backdrop-blur-sm",
-                    "shadow-md"
-                );
-                navbar.classList.remove("bg-transparent");
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">高概率区域占比</div>
+                  <div class="text-2xl font-bold text-accent mt-1">12.3%</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">中概率区域占比</div>
+                  <div class="text-2xl font-bold text-yellow-500 mt-1">
+                    35.7%
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">低概率区域占比</div>
+                  <div class="text-2xl font-bold text-green-500 mt-1">
+                    42.1%
+                  </div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="text-sm text-gray-500">预测置信度</div>
+                  <div class="text-2xl font-bold text-primary mt-1">
+                    87.2%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 报告分析部分 -->
+    <section id="report" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">
+            报告分析
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            生成详细的分析报告，包含结果解释、建议和数据洞察，助力决策制定。
+          </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+            <div class="p-6 border-b border-gray-100">
+              <h3 class="text-xl font-semibold mb-2">综合分析报告</h3>
+              <p class="text-gray-600">
+                基于您上传的数据和模型训练结果生成的专业分析报告
+              </p>
+            </div>
+
+            <div class="p-6">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-blue-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">报告摘要</h4>
+                    <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800">关键发现</span>
+                  </div>
+                      <p class="text-gray-600 text-sm" id="auto-summary">
+                        <span class="text-gray-400">正在生成摘要…</span>
+                      </p>
+                </div>
+
+                <div class="bg-green-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">主要结论</h4>
+                    <span
+                      class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-green-100 text-green-800">1个结论</span>
+                  </div>
+                  <ul class="text-gray-600 text-sm space-y-2" id="auto-conclusion">
+                    <li class="flex items-start">
+                      <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                      <span>研究区域内红色部分显示出较高的铜矿存在概率</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="bg-yellow-50 rounded-xl p-5">
+                  <div class="flex items-center justify-between mb-4">
+                    <h4 class="font-medium text-gray-800">勘探建议</h4>
+                    <span
+                      class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800">优先级</span>
+                  </div>
+                  <div class="space-y-3" id="auto-suggestion">
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-flag text-red-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">高优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          4处
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-yellow-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-exclamation-triangle text-yellow-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">中优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          7处
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                        <i class="fa fa-map-o text-green-500"></i>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium">低优先级区域</p>
+                        <p class="text-xs text-gray-500">
+                          12处
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-gray-100 pt-6">
+                <h4 class="font-semibold mb-4">数据权重分析</h4>
+                <p class="text-gray-600 text-sm mb-4">
+                  不同类型数据对最终预测结果的贡献权重：
+                </p>
+
+                <div class="space-y-3">
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>地球化学数据</span>
+                      <span id="report-geochemical-weight">50%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-geochemical-bar" class="bg-accent h-2 rounded-full" style="width: 50%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>地球物理数据</span>
+                      <span id="report-geophysical-weight">30%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-geophysical-bar" class="bg-accent h-2 rounded-full" style="width: 30%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>钻探数据</span>
+                      <span id="report-drilling-weight">10%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-drilling-bar" class="bg-accent h-2 rounded-full" style="width: 10%"></div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="flex justify-between text-sm mb-1">
+                      <span>遥感数据</span>
+                      <span id="report-remote-sensing-weight">10%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div id="report-remote-sensing-bar" class="bg-accent h-2 rounded-full" style="width: 10%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-4">
+          <button class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-all">
+            <i class="fa fa-download mr-2"></i> 下载PDF报告
+          </button>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- CTA区域 -->
+    <section class="gradient-bg text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          准备开始您的矿产勘探分析了吗？
+        </h2>
+        <p class="text-xl md:text-2xl opacity-90 max-w-2xl mx-auto mb-8">
+          利用我们的概率分析平台，提高勘探效率，降低勘探成本
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button id="cta-upload-btn"
+            class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <i class="fa fa-rocket mr-2"></i> 立即开始分析
+          </button>
+          <a href="http://127.0.0.1:5500/index.html#"
+            class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 backdrop-blur-sm">
+            <i class="fa fa-book mr-2"></i> 查看使用教程
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white pt-12 pb-6">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <i class="fa fa-mountain text-2xl"></i>
+            <h3 class="text-xl font-bold">饕餮大模型</h3>
+          </div>
+          <p class="text-gray-400 mb-4">
+            利用先进的机器学习技术，为矿产勘探提供数据驱动的决策支持。
+          </p>
+          <div class="flex space-x-4">
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="http://127.0.0.1:5500/index.html#" class="text-gray-400 hover:text-white transition-colors">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">快速链接</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#upload"
+                class="text-gray-400 hover:text-white transition-colors">上传数据</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#model-training"
+                class="text-gray-400 hover:text-white transition-colors">模型训练</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#results"
+                class="text-gray-400 hover:text-white transition-colors">结果展示</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#report"
+                class="text-gray-400 hover:text-white transition-colors">报告分析</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">资源</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">使用文档</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">API参考</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">案例研究</a>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:5500/index.html#"
+                class="text-gray-400 hover:text-white transition-colors">常见问题</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4">联系我们</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fa fa-map-marker mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">北京市石景山区中国科学院大学</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-phone mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">+86 88 8888 8888</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fa fa-envelope mt-1 mr-2 text-gray-400"></i>
+              <span class="text-gray-400">contact@miningai.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-500 text-sm">
+            © 2025 饕餮大模型. 保留所有权利.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">隐私政策</a>
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">服务条款</a>
+            <a href="http://127.0.0.1:5500/index.html#"
+              class="text-gray-500 hover:text-white text-sm transition-colors">Cookie政策</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 放在 </body> 之前 -->
+  <script>
+    // 全局变量存储处理过程中的数据
+    let processedData = null;
+    let originalImageData = null; // 存原始 ImageData
+
+    // 导航栏滚动效果
+    window.addEventListener("scroll", function () {
+      const navbar = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        navbar.classList.add(
+          "bg-primary/95",
+          "backdrop-blur-sm",
+          "shadow-md"
+        );
+        navbar.classList.remove("bg-transparent");
+      } else {
+        navbar.classList.remove(
+          "bg-primary/95",
+          "backdrop-blur-sm",
+          "shadow-md"
+        );
+        navbar.classList.add("bg-transparent");
+      }
+    });
+
+    // 移动端菜单切换
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenu.classList.toggle("hidden");
+      });
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // 关闭移动端菜单（如果打开）
+        document.getElementById("mobile-menu").classList.add("hidden");
+
+        const targetId = this.getAttribute("href");
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+
+    // 导航栏跳转
+    document.getElementById('navbar-upload-btn').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('upload').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+    document.getElementById('navbar-model-training-btn').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('model-training').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+    document.getElementById('navbar-results-btn').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('results').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+    document.getElementById('navbar-report-btn').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('report').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    // 开始分析 → 上传数据
+    document.getElementById('btn-start-analysis').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('upload').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    // 查看实例结果 → 结果展示
+    document.getElementById('btn-end-analysis').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('results').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    // CTA跳转
+    document.getElementById('cta-upload-btn').addEventListener('click', () => {
+      // 关闭移动端菜单（如打开）
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+
+      // 平滑滚动到上传区域
+      document.getElementById('upload').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+
+    // 数据权重滑块交互
+    const weightSliders = document.querySelectorAll(".data-weight-slider");
+    weightSliders.forEach((slider) => {
+      slider.addEventListener("input", function () {
+        const type = this.getAttribute("data-type");
+        const value = this.value;
+        document.getElementById(
+          `${type}-weight-value`
+        ).textContent = `${value}%`;
+
+        // 同步到报告分析
+        syncWeightsToReport();
+
+        // 计算总权重
+        let totalWeight = 0;
+        weightSliders.forEach((s) => {
+          totalWeight += parseInt(s.value);
+        });
+        document.getElementById(
+          "total-weight"
+        ).textContent = `${totalWeight}%`;
+
+        // 超出100%时警告
+        const totalWeightEl = document.getElementById("total-weight");
+        if (totalWeight > 100) {
+          totalWeightEl.classList.add("text-red-500");
+        } else {
+          totalWeightEl.classList.remove("text-red-500");
+        }
+      });
+    });
+
+    // 数据权重同步
+    function syncWeightsToReport() {
+      const types = ['geochemical', 'geophysical', 'drilling', 'remote-sensing'];
+      types.forEach(type => {
+        const value = parseInt(document.getElementById(`${type}-weight-value`).textContent);
+        document.getElementById(`report-${type}-weight`).textContent = value + '%';
+        document.getElementById(`report-${type}-bar`).style.width = value + '%';
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      syncWeightsToReport();
+    });
+
+    // 文件上传拖放效果
+    const dropArea = document.getElementById("drop-area");
+
+    ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
+      dropArea.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    ["dragenter", "dragover"].forEach((eventName) => {
+      dropArea.addEventListener(eventName, highlight, false);
+    });
+
+    ["dragleave", "drop"].forEach((eventName) => {
+      dropArea.addEventListener(eventName, unhighlight, false);
+    });
+
+    function highlight() {
+      dropArea.classList.add("border-primary", "bg-blue-50");
+    }
+
+    function unhighlight() {
+      dropArea.classList.remove("border-primary", "bg-blue-50");
+    }
+
+    dropArea.addEventListener("drop", handleDrop, false);
+
+    function handleDrop(e) {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      handleFiles(files);
+    }
+
+    document
+      .getElementById("file-input")
+      .addEventListener("change", function () {
+        handleFiles(this.files);
+      });
+
+    // 存储已上传文件
+    const uploadedFiles = [];
+
+    function handleFiles(files) {
+      if (files.length > 0) {
+        // 清空空文件列表提示
+        document.getElementById("empty-file-list").classList.add("hidden");
+
+        // 添加文件到列表
+        const fileList = document.getElementById("file-list");
+
+        for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+
+          // 检查文件是否已存在
+          const isFileExists = uploadedFiles.some(
+            (f) =>
+              f.name === file.name &&
+              f.size === file.size &&
+              f.type === file.type
+          );
+
+          if (!isFileExists) {
+            // 添加到已上传文件数组
+            uploadedFiles.push(file);
+
+            // 创建文件项
+            const fileItem = document.createElement("div");
+            fileItem.className =
+              "bg-white p-3 rounded-lg shadow-sm flex items-center justify-between border border-gray-100";
+            fileItem.setAttribute("data-file-name", file.name);
+
+            // 获取文件类型图标
+            let fileIcon = "fa-file";
+            if (file.type.includes("image")) fileIcon = "fa-file-image-o";
+            else if (file.type.includes("pdf")) fileIcon = "fa-file-pdf-o";
+            else if (
+              file.type.includes("excel") ||
+              file.name.endsWith(".csv")
+            )
+              fileIcon = "fa-file-excel-o";
+            else if (file.type.includes("word")) fileIcon = "fa-file-word-o";
+
+            // 设置文件大小显示
+            let fileSize = "";
+            if (file.size < 1024) {
+              fileSize = file.size + " B";
+            } else if (file.size < 1048576) {
+              fileSize = (file.size / 1024).toFixed(1) + " KB";
             } else {
-                navbar.classList.remove(
-                    "bg-primary/95",
-                    "backdrop-blur-sm",
-                    "shadow-md"
-                );
-                navbar.classList.add("bg-transparent");
+              fileSize = (file.size / 1048576).toFixed(1) + " MB";
             }
-        });
 
-        // 移动端菜单切换
-        document
-            .getElementById("menu-toggle")
-            .addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu");
-                mobileMenu.classList.toggle("hidden");
-            });
+            // 设置文件类型
+            let fileType = file.type || "未知类型";
+            if (fileType === "") {
+              const fileExtension = file.name.split(".").pop().toLowerCase();
+              fileType = fileExtension
+                ? `${fileExtension.toUpperCase()} 文件`
+                : "未知类型";
+            }
 
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-
-                // 关闭移动端菜单（如果打开）
-                document.getElementById("mobile-menu").classList.add("hidden");
-
-                const targetId = this.getAttribute("href");
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: "smooth",
-                    });
-                }
-            });
-        });
-
-        // 导航栏跳转
-        document.getElementById('navbar-upload-btn').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('upload').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-        document.getElementById('navbar-model-training-btn').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('model-training').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-        document.getElementById('navbar-results-btn').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('results').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-        document.getElementById('navbar-report-btn').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('report').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-
-        // 开始分析 → 上传数据
-        document.getElementById('btn-start-analysis').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('upload').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-
-        // 查看实例结果 → 结果展示
-        document.getElementById('btn-end-analysis').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('results').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-
-        // CTA跳转
-        document.getElementById('cta-upload-btn').addEventListener('click', () => {
-            // 关闭移动端菜单（如打开）
-            document.getElementById('mobile-menu')?.classList.add('hidden');
-
-            // 平滑滚动到上传区域
-            document.getElementById('upload').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        });
-
-        // 数据权重滑块交互
-        const weightSliders = document.querySelectorAll(".data-weight-slider");
-        weightSliders.forEach((slider) => {
-            slider.addEventListener("input", function () {
-                const type = this.getAttribute("data-type");
-                const value = this.value;
-                document.getElementById(
-                    `${type}-weight-value`
-                ).textContent = `${value}%`;
-
-                // 同步到报告分析
-                syncWeightsToReport();
-
-                // 计算总权重
-                let totalWeight = 0;
-                weightSliders.forEach((s) => {
-                    totalWeight += parseInt(s.value);
-                });
-                document.getElementById(
-                    "total-weight"
-                ).textContent = `${totalWeight}%`;
-
-                // 超出100%时警告
-                const totalWeightEl = document.getElementById("total-weight");
-                if (totalWeight > 100) {
-                    totalWeightEl.classList.add("text-red-500");
-                } else {
-                    totalWeightEl.classList.remove("text-red-500");
-                }
-            });
-        });
-
-        // 数据权重同步
-        function syncWeightsToReport() {
-            const types = ['geochemical', 'geophysical', 'drilling', 'remote-sensing'];
-            types.forEach(type => {
-                const value = parseInt(document.getElementById(`${type}-weight-value`).textContent);
-                document.getElementById(`report-${type}-weight`).textContent = value + '%';
-                document.getElementById(`report-${type}-bar`).style.width = value + '%';
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            syncWeightsToReport();
-        });
-
-        // 文件上传拖放效果
-        const dropArea = document.getElementById("drop-area");
-
-        ["dragenter", "dragover", "dragleave", "drop"].forEach((eventName) => {
-            dropArea.addEventListener(eventName, preventDefaults, false);
-        });
-
-        function preventDefaults(e) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-
-        ["dragenter", "dragover"].forEach((eventName) => {
-            dropArea.addEventListener(eventName, highlight, false);
-        });
-
-        ["dragleave", "drop"].forEach((eventName) => {
-            dropArea.addEventListener(eventName, unhighlight, false);
-        });
-
-        function highlight() {
-            dropArea.classList.add("border-primary", "bg-blue-50");
-        }
-
-        function unhighlight() {
-            dropArea.classList.remove("border-primary", "bg-blue-50");
-        }
-
-        dropArea.addEventListener("drop", handleDrop, false);
-
-        function handleDrop(e) {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            handleFiles(files);
-        }
-
-        document
-            .getElementById("file-input")
-            .addEventListener("change", function () {
-                handleFiles(this.files);
-            });
-
-        // 存储已上传文件
-        const uploadedFiles = [];
-
-        function handleFiles(files) {
-            if (files.length > 0) {
-                // 清空空文件列表提示
-                document.getElementById("empty-file-list").classList.add("hidden");
-
-                // 添加文件到列表
-                const fileList = document.getElementById("file-list");
-
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-
-                    // 检查文件是否已存在
-                    const isFileExists = uploadedFiles.some(
-                        (f) =>
-                            f.name === file.name &&
-                            f.size === file.size &&
-                            f.type === file.type
-                    );
-
-                    if (!isFileExists) {
-                        // 添加到已上传文件数组
-                        uploadedFiles.push(file);
-
-                        // 创建文件项
-                        const fileItem = document.createElement("div");
-                        fileItem.className =
-                            "bg-white p-3 rounded-lg shadow-sm flex items-center justify-between border border-gray-100";
-                        fileItem.setAttribute("data-file-name", file.name);
-
-                        // 获取文件类型图标
-                        let fileIcon = "fa-file";
-                        if (file.type.includes("image")) fileIcon = "fa-file-image-o";
-                        else if (file.type.includes("pdf")) fileIcon = "fa-file-pdf-o";
-                        else if (
-                            file.type.includes("excel") ||
-                            file.name.endsWith(".csv")
-                        )
-                            fileIcon = "fa-file-excel-o";
-                        else if (file.type.includes("word")) fileIcon = "fa-file-word-o";
-
-                        // 设置文件大小显示
-                        let fileSize = "";
-                        if (file.size < 1024) {
-                            fileSize = file.size + " B";
-                        } else if (file.size < 1048576) {
-                            fileSize = (file.size / 1024).toFixed(1) + " KB";
-                        } else {
-                            fileSize = (file.size / 1048576).toFixed(1) + " MB";
-                        }
-
-                        // 设置文件类型
-                        let fileType = file.type || "未知类型";
-                        if (fileType === "") {
-                            const fileExtension = file.name.split(".").pop().toLowerCase();
-                            fileType = fileExtension
-                                ? `${fileExtension.toUpperCase()} 文件`
-                                : "未知类型";
-                        }
-
-                        fileItem.innerHTML = `
+            fileItem.innerHTML = `
                             <div class="flex items-center">
                                 <i class="fa ${fileIcon} text-gray-400 mr-3 text-lg"></i>
                                 <div>
@@ -2280,139 +2240,139 @@
                             </button>
                         `;
 
-                        fileList.appendChild(fileItem);
+            fileList.appendChild(fileItem);
 
-                        // 添加删除文件事件
-                        fileItem
-                            .querySelector(".delete-file-btn")
-                            .addEventListener("click", function () {
-                                const fileName = this.getAttribute("data-file-name");
-                                removeFile(fileName);
-                            });
-                    }
-                }
-            }
+            // 添加删除文件事件
+            fileItem
+              .querySelector(".delete-file-btn")
+              .addEventListener("click", function () {
+                const fileName = this.getAttribute("data-file-name");
+                removeFile(fileName);
+              });
+          }
+        }
+      }
+    }
+
+    function removeFile(fileName) {
+      // 从DOM中移除
+      const fileItem = document.querySelector(
+        `[data-file-name="${fileName}"]`
+      );
+      if (fileItem) {
+        fileItem.remove();
+      }
+
+      // 从数组中移除
+      const index = uploadedFiles.findIndex((f) => f.name === fileName);
+      if (index !== -1) {
+        uploadedFiles.splice(index, 1);
+      }
+
+      // 如果没有文件了，显示空文件列表提示
+      if (uploadedFiles.length === 0) {
+        document.getElementById("empty-file-list").classList.remove("hidden");
+      }
+    }
+
+    function processImageFile(file) {
+      // 显示文件信息
+      fileName.textContent = file.name;
+      fileSize.textContent = formatFileSize(file.size);
+      uploadInfo.classList.remove("hidden");
+
+      // 读取并显示图像
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        originalImage.src = e.target.result;
+        originalImage.classList.remove("hidden");
+        originalImageContainer.querySelector("label").classList.add("hidden");
+
+        // 重置结果区域
+        resetResultArea();
+
+        // 图像加载完成后进行预处理
+        originalImage.onload = function () {
+          originalImage.classList.add("animate-fade-in");
+          startPreprocessing(originalImage.src);
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // 上传按钮点击效果
+    document
+      .getElementById("upload-btn")
+      .addEventListener("click", function () {
+        if (uploadedFiles.length === 0) {
+          alert("请先选择要上传的文件");
+          return;
         }
 
-        function removeFile(fileName) {
-            // 从DOM中移除
-            const fileItem = document.querySelector(
-                `[data-file-name="${fileName}"]`
-            );
-            if (fileItem) {
-                fileItem.remove();
-            }
-
-            // 从数组中移除
-            const index = uploadedFiles.findIndex((f) => f.name === fileName);
-            if (index !== -1) {
-                uploadedFiles.splice(index, 1);
-            }
-
-            // 如果没有文件了，显示空文件列表提示
-            if (uploadedFiles.length === 0) {
-                document.getElementById("empty-file-list").classList.remove("hidden");
-            }
+        const file = uploadedFiles[0]; // 取第一个文件
+        if (!file.type.startsWith("image/")) {
+          alert("请上传图片格式的文件（如 PNG、JPG）");
+          return;
         }
 
-        function processImageFile(file) {
-            // 显示文件信息
-            fileName.textContent = file.name;
-            fileSize.textContent = formatFileSize(file.size);
-            uploadInfo.classList.remove("hidden");
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+          document.getElementById("preprocessStatus").textContent =
+            "处理中...";
+          document.getElementById("preprocessProgress").style.width = "10%";
 
-            // 读取并显示图像
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                originalImage.src = e.target.result;
-                originalImage.classList.remove("hidden");
-                originalImageContainer.querySelector("label").classList.add("hidden");
+          try {
+            const file = document.getElementById("file-input").files[0];
+            const img = new Image();
+            img.onload = async () => {
+              processedData = await processImage(img);
 
-                // 重置结果区域
-                resetResultArea();
+              const tempCanvas = document.createElement("canvas");
+              const tempCtx = tempCanvas.getContext("2d");
+              tempCanvas.width = img.width;
+              tempCanvas.height = img.height;
+              tempCtx.drawImage(img, 0, 0);
+              originalImageData = tempCtx.getImageData(0, 0, img.width, img.height);
 
-                // 图像加载完成后进行预处理
-                originalImage.onload = function () {
-                    originalImage.classList.add("animate-fade-in");
-                    startPreprocessing(originalImage.src);
-                };
+              document.getElementById("preprocessStatus").textContent = "预处理完成";
+              document.getElementById("preprocessProgress").style.width = "100%";
             };
-            reader.readAsDataURL(file);
+            img.src = URL.createObjectURL(file);
+          } catch (err) {
+            document.getElementById("preprocessStatus").textContent =
+              "预处理失败";
+            console.error(err);
+            alert("预处理失败：" + err.message);
+          }
+        };
+        reader.readAsDataURL(file);
+      });
+
+    // 训练模型按钮点击事件
+    document
+      .getElementById("train-model-btn")
+      .addEventListener("click", async () => {
+        if (!processedData) {
+          alert("请先上传并预处理图片");
+          return;
         }
 
-        // 上传按钮点击效果
-        document
-            .getElementById("upload-btn")
-            .addEventListener("click", function () {
-                if (uploadedFiles.length === 0) {
-                    alert("请先选择要上传的文件");
-                    return;
-                }
+        const progressContainer = document.getElementById("prediction-progress-container");
+        const progressBar = document.getElementById("prediction-progress-bar");
+        const progressText = document.getElementById("prediction-progress-text");
 
-                const file = uploadedFiles[0]; // 取第一个文件
-                if (!file.type.startsWith("image/")) {
-                    alert("请上传图片格式的文件（如 PNG、JPG）");
-                    return;
-                }
+        try {
+          const modelPath = document.getElementById("model-type").value;
+          const { predictions, labels } = await runInference(processedData, modelPath);
 
-                const reader = new FileReader();
-                reader.onload = async (e) => {
-                    document.getElementById("preprocessStatus").textContent =
-                        "处理中...";
-                    document.getElementById("preprocessProgress").style.width = "10%";
+          const resultData = createVisualization(
+            originalImageData,
+            { predictions, labels },
+            0.9
+          );
+          document.getElementById("result-image").src = resultData.resultUrl;
 
-                    try {
-                        const file = document.getElementById("file-input").files[0];
-                        const img = new Image();
-                        img.onload = async () => {
-                            processedData = await processImage(img);
-
-                            const tempCanvas = document.createElement("canvas");
-                            const tempCtx = tempCanvas.getContext("2d");
-                            tempCanvas.width = img.width;
-                            tempCanvas.height = img.height;
-                            tempCtx.drawImage(img, 0, 0);
-                            originalImageData = tempCtx.getImageData(0, 0, img.width, img.height);
-
-                            document.getElementById("preprocessStatus").textContent = "预处理完成";
-                            document.getElementById("preprocessProgress").style.width = "100%";
-                        };
-                        img.src = URL.createObjectURL(file);
-                    } catch (err) {
-                        document.getElementById("preprocessStatus").textContent =
-                            "预处理失败";
-                        console.error(err);
-                        alert("预处理失败：" + err.message);
-                    }
-                };
-                reader.readAsDataURL(file);
-            });
-
-        // 训练模型按钮点击事件
-        document
-            .getElementById("train-model-btn")
-            .addEventListener("click", async () => {
-                if (!processedData) {
-                    alert("请先上传并预处理图片");
-                    return;
-                }
-
-                const progressContainer = document.getElementById("prediction-progress-container");
-                const progressBar = document.getElementById("prediction-progress-bar");
-                const progressText = document.getElementById("prediction-progress-text");
-
-                try {
-                    const modelPath = document.getElementById("model-type").value;
-                    const { predictions, labels } = await runInference(processedData, modelPath);
-
-                    const resultData = createVisualization(
-                        originalImageData,
-                        { predictions, labels },
-                        0.9
-                    );
-                    document.getElementById("result-image").src = resultData.resultUrl;
-
-                    //报告分析
+            //报告分析
                     // 1. 收集当前结果
                     const reportJson = {
                         miningType: document.getElementById('mining-type').value,
@@ -2452,553 +2412,475 @@
                         });
                     //***//
 
-                    document.querySelector('#results .text-2xl.text-accent').textContent = resultData.highPercent + '%';
-                    document.querySelector('#results .text-2xl.text-yellow-500').textContent = resultData.mediumPercent + '%';
-                    document.querySelector('#results .text-2xl.text-green-500').textContent = resultData.lowPercent + '%';
-                } catch (err) {
-                    alert("推理失败：" + err.message);
-                }
-            });
+          document.querySelector('#results .text-2xl.text-accent').textContent = resultData.highPercent + '%';
+          document.querySelector('#results .text-2xl.text-yellow-500').textContent = resultData.mediumPercent + '%';
+          document.querySelector('#results .text-2xl.text-green-500').textContent = resultData.lowPercent + '%';
+        } catch (err) {
+          alert("推理失败：" + err.message);
+        }
+      });
 
-        // 格式化文件大小
-        function formatFileSize(bytes) {
-            if (bytes === 0) return "0 Bytes";
-            const k = 1024;
-            const sizes = ["Bytes", "KB", "MB"];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+    // 格式化文件大小
+    function formatFileSize(bytes) {
+      if (bytes === 0) return "0 Bytes";
+      const k = 1024;
+      const sizes = ["Bytes", "KB", "MB"];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+    }
+
+    // 重置结果区域
+    function resetResultArea() {
+      resultImage.classList.add("hidden");
+      noResultImage.classList.remove("hidden");
+      predictionInfo.classList.add("hidden");
+      predictionLoading.classList.add("hidden");
+    }
+
+    // 处理图片：裁剪和增广
+    async function processImage(img) {
+      const patchSize = 128;
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      const patches = [];
+      patchCoordinates = []; // 重置坐标数组
+
+      // 设置画布大小
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+
+      // 生成唯一区域名称
+      const areaName = Date.now().toString(36);
+      let patchId = 0;
+
+      // 计算可以裁剪多少个128x128的块
+      const numCols = Math.floor(img.width / patchSize);
+      const numRows = Math.floor(img.height / patchSize);
+
+      // 裁剪图像块
+      for (let y = 0; y < numRows; y++) {
+        for (let x = 0; x < numCols; x++) {
+          if (y + patchSize > img.height || x + patchSize > img.width) {
+            continue;
+          }
+
+          // 创建裁剪区域
+          const patchCanvas = document.createElement('canvas');
+          patchCanvas.width = patchSize;
+          patchCanvas.height = patchSize;
+          const patchCtx = patchCanvas.getContext('2d');
+
+          // 裁剪128x128的块
+          patchCtx.drawImage(
+            img,
+            x * patchSize, y * patchSize,
+            patchSize, patchSize,
+            0, 0,
+            patchSize, patchSize
+          );
+
+          // 记录坐标信息
+          const originalX = x * patchSize;
+          const originalY = y * patchSize;
+
+          // 基础文件名（这里简化处理，假设label为0）
+          const baseFilename = `area_${areaName}_patch_${patchId}_x${originalX}_y${originalY}_label_0`;
+
+          // 保存原始块
+          const originalPatch = {
+            name: `${baseFilename}.png`,
+            canvas: patchCanvas,
+            x: originalX,
+            y: originalY
+          };
+          patches.push(originalPatch);
+          patchCoordinates.push({ x: originalX, y: originalY });
+
+          // 应用增广
+          // 旋转90度
+          const rot90Canvas = rotateImage(patchCanvas, 90);
+          patches.push({
+            name: `${baseFilename}_rot90.png`,
+            canvas: rot90Canvas,
+            x: originalX,
+            y: originalY
+          });
+          patchCoordinates.push({ x: originalX, y: originalY });
+
+          // 旋转270度
+          const rot270Canvas = rotateImage(patchCanvas, 270);
+          patches.push({
+            name: `${baseFilename}_rot270.png`,
+            canvas: rot270Canvas,
+            x: originalX,
+            y: originalY
+          });
+          patchCoordinates.push({ x: originalX, y: originalY });
+
+          // 水平翻转
+          const hflipCanvas = flipImage(patchCanvas, 'horizontal');
+          patches.push({
+            name: `${baseFilename}_hflip.png`,
+            canvas: hflipCanvas,
+            x: originalX,
+            y: originalY
+          });
+          patchCoordinates.push({ x: originalX, y: originalY });
+
+          // 垂直翻转
+          const vflipCanvas = flipImage(patchCanvas, 'vertical');
+          patches.push({
+            name: `${baseFilename}_vflip.png`,
+            canvas: vflipCanvas,
+            x: originalX,
+            y: originalY
+          });
+          patchCoordinates.push({ x: originalX, y: originalY });
+          patchId++;
+        }
+      }
+      return patches;
+    }
+
+    // 旋转图像
+    function rotateImage(canvas, degrees) {
+      const newCanvas = document.createElement('canvas');
+      const ctx = newCanvas.getContext('2d');
+
+      if (degrees === 90 || degrees === 270) {
+        newCanvas.width = canvas.height;
+        newCanvas.height = canvas.width;
+      } else {
+        newCanvas.width = canvas.width;
+        newCanvas.height = canvas.height;
+      }
+
+      ctx.save();
+
+      if (degrees === 90) {
+        ctx.translate(newCanvas.width, 0);
+        ctx.rotate(Math.PI / 2);
+      } else if (degrees === 270) {
+        ctx.translate(0, newCanvas.height);
+        ctx.rotate(3 * Math.PI / 2);
+      }
+
+      ctx.drawImage(canvas, 0, 0);
+      ctx.restore();
+
+      return newCanvas;
+    }
+
+    // 翻转图像
+    function flipImage(canvas, direction) {
+      const newCanvas = document.createElement('canvas');
+      newCanvas.width = canvas.width;
+      newCanvas.height = canvas.height;
+      const ctx = newCanvas.getContext('2d');
+
+      ctx.save();
+
+      if (direction === 'horizontal') {
+        ctx.translate(canvas.width, 0);
+        ctx.scale(-1, 1);
+      } else if (direction === 'vertical') {
+        ctx.translate(0, canvas.height);
+        ctx.scale(1, -1);
+      }
+
+      ctx.drawImage(canvas, 0, 0);
+      ctx.restore();
+
+      return newCanvas;
+    }
+
+    // 创建边索引 - 构建相邻patch之间的连接
+    function createEdgeIndex(numNodes) {
+      // 示例：4-邻域（上下左右）（可根据实际改）
+      const edges = [[], []];
+      const W = Math.floor(Math.sqrt(numNodes / 5)); // 原始横向块数
+      const H = Math.floor(numNodes / 5 / W);
+      for (let h = 0; h < H; h++) {
+        for (let w = 0; w < W; w++) {
+          const idx = (h * W + w) * 5;                 // 每个原始块占 5 个节点
+          // 右
+          if (w < W - 1) { edges[0].push(idx); edges[1].push(idx + 5); }
+          // 下
+          if (h < H - 1) { edges[0].push(idx); edges[1].push(idx + W * 5); }
+          // 对称反向边
+          if (w < W - 1) { edges[0].push(idx + 5); edges[1].push(idx); }
+          if (h < H - 1) { edges[0].push(idx + W * 5); edges[1].push(idx); }
+        }
+      }
+      return new ort.Tensor('int32', new Int32Array(edges.flat()), [2, edges[0].length]);
+    }
+
+    // 模型推理函数
+    async function runInference(processedData, modelPath) {
+      console.log("--- 开始模型推理 ---");
+
+      try {
+        // 检查模型路径是否为空
+        if (!modelPath || modelPath.trim() === "") {
+          throw new Error("模型路径不能为空，请输入有效的模型文件路径");
+        }
+        if (!processedData || processedData.length === 0) {
+          throw new Error("未裁剪出任何图像块，请上传更大图像或减小 patchSize");
         }
 
-        // 重置结果区域
-        function resetResultArea() {
-            resultImage.classList.add("hidden");
-            noResultImage.classList.remove("hidden");
-            predictionInfo.classList.add("hidden");
-            predictionLoading.classList.add("hidden");
-        }
-
-        // 处理图片：裁剪和增广
-        async function processImage(img) {
-            const patchSize = 128;
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            const patches = [];
-            patchCoordinates = []; // 重置坐标数组
-
-            // 设置画布大小
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
-
-            // 生成唯一区域名称
-            const areaName = Date.now().toString(36);
-            let patchId = 0;
-
-            // 计算可以裁剪多少个128x128的块
-            const numCols = Math.floor(img.width / patchSize);
-            const numRows = Math.floor(img.height / patchSize);
-
-            // 裁剪图像块
-            for (let y = 0; y < numRows; y++) {
-                for (let x = 0; x < numCols; x++) {
-                    if (y + patchSize > img.height || x + patchSize > img.width) {
-                        continue;
-                    }
-
-                    // 创建裁剪区域
-                    const patchCanvas = document.createElement('canvas');
-                    patchCanvas.width = patchSize;
-                    patchCanvas.height = patchSize;
-                    const patchCtx = patchCanvas.getContext('2d');
-
-                    // 裁剪128x128的块
-                    patchCtx.drawImage(
-                        img,
-                        x * patchSize, y * patchSize,
-                        patchSize, patchSize,
-                        0, 0,
-                        patchSize, patchSize
-                    );
-
-                    // 记录坐标信息
-                    const originalX = x * patchSize;
-                    const originalY = y * patchSize;
-
-                    // 基础文件名（这里简化处理，假设label为0）
-                    const baseFilename = `area_${areaName}_patch_${patchId}_x${originalX}_y${originalY}_label_0`;
-
-                    // 保存原始块
-                    const originalPatch = {
-                        name: `${baseFilename}.png`,
-                        canvas: patchCanvas,
-                        x: originalX,
-                        y: originalY
-                    };
-                    patches.push(originalPatch);
-                    patchCoordinates.push({ x: originalX, y: originalY });
-
-                    // // 应用增广
-                    // // 旋转90度
-                    // const rot90Canvas = rotateImage(patchCanvas, 90);
-                    // patches.push({
-                    //   name: `${baseFilename}_rot90.png`,
-                    //   canvas: rot90Canvas,
-                    //   x: originalX,
-                    //   y: originalY
-                    // });
-                    // patchCoordinates.push({ x: originalX, y: originalY });
-
-                    // // 旋转270度
-                    // const rot270Canvas = rotateImage(patchCanvas, 270);
-                    // patches.push({
-                    //   name: `${baseFilename}_rot270.png`,
-                    //   canvas: rot270Canvas,
-                    //   x: originalX,
-                    //   y: originalY
-                    // });
-                    // patchCoordinates.push({ x: originalX, y: originalY });
-
-                    // // 水平翻转
-                    // const hflipCanvas = flipImage(patchCanvas, 'horizontal');
-                    // patches.push({
-                    //   name: `${baseFilename}_hflip.png`,
-                    //   canvas: hflipCanvas,
-                    //   x: originalX,
-                    //   y: originalY
-                    // });
-                    // patchCoordinates.push({ x: originalX, y: originalY });
-
-                    // // 垂直翻转
-                    // const vflipCanvas = flipImage(patchCanvas, 'vertical');
-                    // patches.push({
-                    //   name: `${baseFilename}_vflip.png`,
-                    //   canvas: vflipCanvas,
-                    //   x: originalX,
-                    //   y: originalY
-                    // });
-                    // patchCoordinates.push({ x: originalX, y: originalY });
-                    patchId++;
-                }
-            }
-            return patches;
-        }
-
-        // 旋转图像
-        function rotateImage(canvas, degrees) {
-            const newCanvas = document.createElement('canvas');
-            const ctx = newCanvas.getContext('2d');
-
-            if (degrees === 90 || degrees === 270) {
-                newCanvas.width = canvas.height;
-                newCanvas.height = canvas.width;
-            } else {
-                newCanvas.width = canvas.width;
-                newCanvas.height = canvas.height;
-            }
-
-            ctx.save();
-
-            if (degrees === 90) {
-                ctx.translate(newCanvas.width, 0);
-                ctx.rotate(Math.PI / 2);
-            } else if (degrees === 270) {
-                ctx.translate(0, newCanvas.height);
-                ctx.rotate(3 * Math.PI / 2);
-            }
-
-            ctx.drawImage(canvas, 0, 0);
-            ctx.restore();
-
-            return newCanvas;
-        }
-
-        // 翻转图像
-        function flipImage(canvas, direction) {
-            const newCanvas = document.createElement('canvas');
-            newCanvas.width = canvas.width;
-            newCanvas.height = canvas.height;
-            const ctx = newCanvas.getContext('2d');
-
-            ctx.save();
-
-            if (direction === 'horizontal') {
-                ctx.translate(canvas.width, 0);
-                ctx.scale(-1, 1);
-            } else if (direction === 'vertical') {
-                ctx.translate(0, canvas.height);
-                ctx.scale(1, -1);
-            }
-
-            ctx.drawImage(canvas, 0, 0);
-            ctx.restore();
-
-            return newCanvas;
-        }
-
-        // 创建边索引 - 构建相邻patch之间的连接
-        function createEdgeIndex(numNodes) {
-            // 示例：4-邻域（上下左右）（可根据实际改）
-            const edges = [[], []];
-            const W = Math.floor(Math.sqrt(numNodes / 5)); // 原始横向块数
-            const H = Math.floor(numNodes / 5 / W);
-            for (let h = 0; h < H; h++) {
-                for (let w = 0; w < W; w++) {
-                    const idx = (h * W + w) * 5;                 // 每个原始块占 5 个节点
-                    // 右
-                    if (w < W - 1) { edges[0].push(idx); edges[1].push(idx + 5); }
-                    // 下
-                    if (h < H - 1) { edges[0].push(idx); edges[1].push(idx + W * 5); }
-                    // 对称反向边
-                    if (w < W - 1) { edges[0].push(idx + 5); edges[1].push(idx); }
-                    if (h < H - 1) { edges[0].push(idx + W * 5); edges[1].push(idx); }
-                }
-            }
-            return new ort.Tensor('int32', new Int32Array(edges.flat()), [2, edges[0].length]);
-        }
-
-        // 模型推理函数
-        async function runInference(processedData, modelPath) {
-            console.log("--- 开始模型推理 ---");
-
-            try {
-                // 检查模型路径是否为空
-                if (!modelPath || modelPath.trim() === "") {
-                    throw new Error("模型路径不能为空，请输入有效的模型文件路径");
-                }
-                if (!processedData || processedData.length === 0) {
-                    throw new Error("未裁剪出任何图像块，请上传更大图像或减小 patchSize");
-                }
-
-                // 尝试加载ONNX模型前先验证文件是否存在
-                try {
-                    const response = await fetch(modelPath, { method: "HEAD" });
-                    if (!response.ok) {
-                        throw new Error(
-                            `模型文件不存在或无法访问 (HTTP状态: ${response.status})`
-                        );
-                    }
-                } catch (fetchError) {
-                    throw new Error(`模型文件加载失败: ${fetchError.message}`);
-                }
-
-                // 4. 创建输入张量（类型和名称严格匹配）
-                const numNodes = processedData.length;
-                // 对所有图像块提取特征并组合成一个输入张量
-                const allFeatures = [];
-                const batchSize = 4; // 每批提取 4 个 patch，可调
-
-                for (let i = 0; i < processedData.length; i++) {
-                    const feat = await preprocessImage(processedData[i].canvas); // ✅ [768]
-                    allFeatures.push(...feat);
-
-                    // 更新进度：特征提取阶段 0-70%
-                    const progress = Math.min(70, (i + batchSize) / numNodes * 70);
-                    updatePredictionProgress(progress);
-                }
-                const edgeIndex = createEdgeIndex(numNodes);
-                const inputFeatures = new ort.Tensor('float32', allFeatures, [numNodes, 768]);
-
-                updatePredictionProgress(75);
-
-                // 执行推理
-                const session = await ort.InferenceSession.create(modelPath, {
-                    // executionProviders: ["cpu"],
-                    executionProviders: ['wasm'],
-                    graphOptimizationLevel: "all",
-                });
-
-                const feeds = {
-                    'input_features': inputFeatures,
-                    'edge_index': edgeIndex
-                };
-
-                const results = await session.run(feeds);
-
-                updatePredictionProgress(100);
-
-                // 处理输出
-                const output = results.logits.data;
-                const labels = [];
-                const predictions = [];
-
-                // 解析预测结果（假设是二分类）
-                for (let i = 0; i < numNodes; i++) {
-                    const z0 = output[i * 2];
-                    const z1 = output[i * 2 + 1];
-                    const maxZ = Math.max(z0, z1);
-                    const exp0 = Math.exp(z0 - maxZ);
-                    const exp1 = Math.exp(z1 - maxZ);
-                    const p1 = exp1 / (exp0 + exp1); // 正类概率
-                    predictions.push(p1);
-                    labels.push(z1 >= 0.5 ? 1 : 0);
-                }
-                hidePredictionProgress();
-                console.log("模型推理完成");
-                return { predictions, labels };
-            } catch (e) {
-                hidePredictionProgress();
-                console.error("推理过程出错:", e);
-                let errorMsg = e.message;
-
-                // 针对ConstantOfShape算子的特定提示
-                if (errorMsg.includes("execution provider")) {
-                    errorMsg += "\n已使用CPU模式运行，确保浏览器支持基本JavaScript功能";
-                }
-
-                throw new Error(errorMsg);
-            }
-        }
-
-        // 预处理图像为模型输入格式
-        async function preprocessImage(canvas) {
-            const ctx = canvas.getContext('2d');
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-
-            // 转换为RGB并归一化
-            const float32Data = new Float32Array(canvas.width * canvas.height * 3);
-            for (let i = 0; i < data.length; i += 4) {
-                const index = (i / 4) * 3;
-                float32Data[index] = data[i] / 255.0;     // R
-                float32Data[index + 1] = data[i + 1] / 255.0; // G
-                float32Data[index + 2] = data[i + 2] / 255.0; // B
-            }
-
-            // 创建输入张量 (1, 3, 128, 128)
-            const tensor = new ort.Tensor('float32', float32Data, [1, 3, 128, 128]);
-
-            // 注意：这里应该有DINOv2特征提取步骤
-            const feat = await extractDinoV2(canvas);
-            if (feat.length !== 768) {
-                throw new Error(`DINOv2 输出维度错误: ${feat.length}`);
-            }
-            return feat;
-        }
-
-        // 代替原来的 dummyFeatures 段落
-        async function initDinoV2() {
-            if (dinov2Session) return;
-            dinov2Session = await ort.InferenceSession.create(
-                '/dinov2.onnx',   // ① 模型路径
-                {
-                    executionProviders: ['wasm'],
-                    graphOptimizationLevel: "all",
-                } // ② 纯 CPU/WASM，无后端
+        // 尝试加载ONNX模型前先验证文件是否存在
+        try {
+          const response = await fetch(modelPath, { method: "HEAD" });
+          if (!response.ok) {
+            throw new Error(
+              `模型文件不存在或无法访问 (HTTP状态: ${response.status})`
             );
+          }
+        } catch (fetchError) {
+          throw new Error(`模型文件加载失败: ${fetchError.message}`);
         }
 
-        async function extractDinoV2(canvas) {
-            await initDinoV2();               // 确保模型已加载
-
-            /* ---------- 1. 将 canvas 缩放到 224×224 ---------- */
-            const ctx224 = document.createElement('canvas').getContext('2d');
-            ctx224.canvas.width = 128;
-            ctx224.canvas.height = 128;
-            ctx224.imageSmoothingEnabled = true;
-            ctx224.drawImage(canvas, 0, 0, 128, 128);
-
-            /* ---------- 2. 取出 ImageData 并归一化到 [0,1] ---------- */
-            const imgData = ctx224.getImageData(0, 0, 128, 128);
-            const { data, width, height } = imgData;
-            const tensor = new Float32Array(1 * 3 * height * width); // NCHW
-            let idx = 0;
-            for (let c = 0; c < 3; ++c) {          // RGB 顺序
-                for (let y = 0; y < height; ++y) {
-                    for (let x = 0; x < width; ++x) {
-                        tensor[idx++] = data[(y * width + x) * 4 + c] / 255.0;
-                    }
-                }
-            }
-
-            /* ---------- 3. 推理 ---------- */
-            const feeds = {
-                pixel_values: new ort.Tensor('float32', tensor, [1, 3, 128, 128])
-            };
-            // console.log("输入名称:", dinov2Session.inputNames);
-            // console.log("输入元数据:", dinov2Session.inputMetadata);
-            // console.log("实际输入:", feeds);
-            const outputs = await dinov2Session.run(feeds);
-            // DINOv2-small 输出 shape: [1,384]   (base 是 [1,768])
-            const full = outputs.last_hidden_state.data; // Float32Array(62976)
-            const h = 9, w = 9, c = 768;
-            const feat = new Float32Array(c);
-            for (let i = 0; i < c; i++) {
-                feat[i] = full[i]; // 第 0 个 token
-            }
-            return feat;
-        }
-
-        function createVisualization(originalImage, { predictions, labels }, confidenceThreshold = 0.6) {
-            console.log("--- 开始结果可视化 ---");
-
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-
-            canvas.width = originalImage.width;
-            canvas.height = originalImage.height;
-
-            // 先把原图画上去（RGB）
-            ctx.putImageData(originalImage, 0, 0);
-
-            // 创建半透明红色覆盖层
-            const overlay = document.createElement("canvas");
-            overlay.width = canvas.width;
-            overlay.height = canvas.height;
-            const overlayCtx = overlay.getContext("2d");
-            overlayCtx.clearRect(0, 0, overlay.width, overlay.height);
-
-            const patchSize = 128;
-            const cols = Math.floor(canvas.width / patchSize);
-            const rows = Math.floor(canvas.height / patchSize);
-
-            let highCount = 0;
-            let mediumCount = 0;
-            let lowCount = 0;
-            let totalPatches = rows * cols; // 计算总区域数
-
-            // 只画 prediction==1 且 confidence>=threshold 的块
-            for (let i = 0; i < labels.length; i++) {
-                if (labels[i] == 1 && predictions[i] >= confidenceThreshold) {
-                    const row = Math.floor(i / cols);
-                    const col = i % cols;
-                    const x = col * patchSize;
-                    const y = row * patchSize;
-
-                    overlayCtx.fillStyle = "rgba(255,0,0,0.5)"; // 半透明红
-                    overlayCtx.fillRect(x, y, patchSize, patchSize);
-                    highCount++;
-                }
-                if (labels[i] == 1 && predictions[i] >= confidenceThreshold - 0.1 && predictions[i] < confidenceThreshold) {
-                    const row = Math.floor(i / cols);
-                    const col = i % cols;
-                    const x = col * patchSize;
-                    const y = row * patchSize;
-
-                    overlayCtx.fillStyle = "rgba(255, 255, 0, 0.5)"; // 半透明黄
-                    overlayCtx.fillRect(x, y, patchSize, patchSize);
-                    mediumCount++;
-                }
-                if (labels[i] == 1 && predictions[i] >= confidenceThreshold - 0.2 && predictions[i] < confidenceThreshold - 0.1) {
-                    const row = Math.floor(i / cols);
-                    const col = i % cols;
-                    const x = col * patchSize;
-                    const y = row * patchSize;
-
-                    overlayCtx.fillStyle = "rgba(0, 255, 0, 0.5)"; // 半透明绿
-                    overlayCtx.fillRect(x, y, patchSize, patchSize);
-                    lowCount++;
-                }
-            }
-
-            // 把覆盖层画到主画布
-            ctx.globalCompositeOperation = "source-over";
-            ctx.drawImage(overlay, 0, 0);
-
-            // 计算百分比
-            const highPercent = ((highCount / totalPatches) * 100).toFixed(1);
-            const mediumPercent = ((mediumCount / totalPatches) * 100).toFixed(1);
-            const lowPercent = ((lowCount / totalPatches) * 100).toFixed(1);
-
-            // 返回结果URL和区域数量信息
-            return {
-                resultUrl: canvas.toDataURL("image/png"),
-                highPercent,
-                mediumPercent,
-                lowPercent
-            };
-        }
-
-        function showPredictionProgress() {
-            predictionCancelled = false;
-            document.getElementById('prediction-modal').classList.remove('hidden');
-            updatePredictionProgress(0);
-        }
-
-        function hidePredictionProgress() {
-            document.getElementById('prediction-modal').classList.add('hidden');
-        }
-
-        function updatePredictionProgress(percent) {
-            const bar = document.getElementById('prediction-progress');
-            const text = document.getElementById('prediction-progress-text');
-            bar.style.width = percent + '%';
-            text.textContent = Math.round(percent) + '%';
-        }
-
-        function isPredictionCancelled() {
-            return predictionCancelled;
-        }
-
-        document.getElementById('cancel-prediction').addEventListener('click', () => {
-            predictionCancelled = true;
-            hidePredictionProgress();
+        const session = await ort.InferenceSession.create(modelPath, {
+          executionProviders: ["cpu"],
+          executionProviders: ['wasm'],
+          graphOptimizationLevel: "all",
         });
-    </script>
 
-    <!-- Code injected by live-server -->
-    <script>
-        // <![CDATA[  <-- For SVG support
-        if ("WebSocket" in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (
-                            (elem.href && typeof rel != "string") ||
-                            rel.length == 0 ||
-                            rel.toLowerCase() == "stylesheet"
-                        ) {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
-                            elem.href =
-                                url +
-                                (url.indexOf("?") >= 0 ? "&" : "?") +
-                                "_cacheOverride=" +
-                                new Date().valueOf();
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol =
-                    window.location.protocol === "http:" ? "ws://" : "wss://";
-                var address =
-                    protocol + window.location.host + window.location.pathname + "/ws";
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == "reload") window.location.reload();
-                    else if (msg.data == "refreshcss") refreshCSS();
-                };
-                if (
-                    sessionStorage &&
-                    !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
-                ) {
-                    console.log("Live reload enabled.");
-                    sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
-                }
-            })();
-        } else {
-            console.error(
-                "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
-            );
+        // 4. 创建输入张量（类型和名称严格匹配）
+        const numNodes = processedData.length;
+        const edgeIndex = createEdgeIndex(numNodes);
+        // 对所有图像块提取特征并组合成一个输入张量
+        const allFeatures = [];
+        for (let i = 0; i < processedData.length; i++) {
+          const patch = processedData[i];
+          const featureTensor = await preprocessImage(patch.canvas);
+          allFeatures.push(...featureTensor.data);
         }
-        // ]]>
-    </script>
+        const inputFeatures = new ort.Tensor('float32', allFeatures, [numNodes, 768]);
 
-    <div id="floating-button" class="floating-button" style="z-index: 999; font-size: 12px">
-        ChatGPT
-    </div>
-    <deepl-input-controller translate="no"><template shadowrootmode="open">
-            <link rel="stylesheet" href="chrome-extension://fancfknaplihpclbhbpclnmmjcjanbaf/build/content.css" />
-            <div dir="ltr" style="visibility: initial !important">
-                <div class="dl-input-translation-container svelte-95aucy">
-                    <div></div>
-                </div>
-            </div>
-        </template></deepl-input-controller>
+        // 执行推理
+        const feeds = {
+          'input_features': inputFeatures,
+          'edge_index': edgeIndex
+        };
+
+        // console.log("输入名称:", session.inputNames);
+        // console.log("输入元数据:", session.inputMetadata);
+        // console.log("实际输入:", feeds);
+        const results = await session.run(feeds);
+
+        // 处理输出
+        const output = results.logits.data;
+        const labels = [];
+        const predictions = [];
+
+        // 解析预测结果（假设是二分类）
+        for (let i = 0; i < numNodes; i++) {
+          // const prob = output[i * 2 + 1]; // 概率分支
+          // labels.push(prob > 0.5 ? 1 : 0);
+
+          const z0 = output[i * 2];
+          const z1 = output[i * 2 + 1];
+          const maxZ = Math.max(z0, z1);
+          const exp0 = Math.exp(z0 - maxZ);
+          const exp1 = Math.exp(z1 - maxZ);
+          const p1 = exp1 / (exp0 + exp1); // 正类概率
+          predictions.push(p1);
+          labels.push(z1 >= 0.5 ? 1 : 0);
+        }
+        // console.log(
+        //     `节点数: ${processedData.numNodes}, 边数: ${processedData.numEdges}`
+        // );
+        console.log("模型推理完成");
+        return { predictions, labels };
+      } catch (e) {
+        console.error("推理过程出错:", e);
+        let errorMsg = e.message;
+
+        // 针对ConstantOfShape算子的特定提示
+        if (errorMsg.includes("execution provider")) {
+          errorMsg += "\n已使用CPU模式运行，确保浏览器支持基本JavaScript功能";
+        }
+
+        throw new Error(errorMsg);
+      }
+    }
+
+    // 预处理图像为模型输入格式
+    async function preprocessImage(canvas) {
+      const ctx = canvas.getContext('2d');
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+
+      // 转换为RGB并归一化
+      const float32Data = new Float32Array(canvas.width * canvas.height * 3);
+      for (let i = 0; i < data.length; i += 4) {
+        const index = (i / 4) * 3;
+        float32Data[index] = data[i] / 255.0;     // R
+        float32Data[index + 1] = data[i + 1] / 255.0; // G
+        float32Data[index + 2] = data[i + 2] / 255.0; // B
+      }
+
+      // 创建输入张量 (1, 3, 128, 128)
+      const tensor = new ort.Tensor('float32', float32Data, [1, 3, 128, 128]);
+
+      // 注意：这里应该有DINOv2特征提取步骤
+      // 由于浏览器中无法直接运行DINOv2，这里使用随机特征作为替代
+      // 实际应用中需要通过API获取特征或使用简化版特征提取
+      const dummyFeatures = new Float32Array(768);
+      for (let i = 0; i < 768; i++) {
+        dummyFeatures[i] = Math.random() * 2 - 1; // 生成[-1, 1)之间的随机数
+      }
+
+      return new ort.Tensor('float32', dummyFeatures, [1, 768]);
+    }
+
+    function createVisualization(originalImage, { predictions, labels }, confidenceThreshold = 0.6) {
+      console.log("--- 开始结果可视化 ---");
+
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = originalImage.width;
+      canvas.height = originalImage.height;
+
+      // 先把原图画上去（RGB）
+      ctx.putImageData(originalImage, 0, 0);
+
+      // 创建半透明红色覆盖层
+      const overlay = document.createElement("canvas");
+      overlay.width = canvas.width;
+      overlay.height = canvas.height;
+      const overlayCtx = overlay.getContext("2d");
+      overlayCtx.clearRect(0, 0, overlay.width, overlay.height);
+
+      const patchSize = 128;
+      const cols = Math.floor(canvas.width / patchSize);
+      const rows = Math.floor(canvas.height / patchSize);
+
+      let highCount = 0;
+      let mediumCount = 0;
+      let lowCount = 0;
+      let totalPatches = rows * cols; // 计算总区域数
+
+      // 只画 prediction==1 且 confidence>=threshold 的块
+      for (let i = 0; i < labels.length; i++) {
+        if (labels[i] == 1 && predictions[i] >= confidenceThreshold) {
+          const row = Math.floor(i / cols);
+          const col = i % cols;
+          const x = col * patchSize;
+          const y = row * patchSize;
+
+          overlayCtx.fillStyle = "rgba(255,0,0,0.5)"; // 半透明红
+          overlayCtx.fillRect(x, y, patchSize, patchSize);
+          highCount++;
+        }
+        if (labels[i] == 1 && predictions[i] >= confidenceThreshold - 0.1 && predictions[i] < confidenceThreshold) {
+          const row = Math.floor(i / cols);
+          const col = i % cols;
+          const x = col * patchSize;
+          const y = row * patchSize;
+
+          overlayCtx.fillStyle = "rgba(255, 255, 0, 0.5)"; // 半透明黄
+          overlayCtx.fillRect(x, y, patchSize, patchSize);
+          mediumCount++;
+        }
+        if (labels[i] == 1 && predictions[i] >= confidenceThreshold - 0.2 && predictions[i] < confidenceThreshold - 0.1) {
+          const row = Math.floor(i / cols);
+          const col = i % cols;
+          const x = col * patchSize;
+          const y = row * patchSize;
+
+          overlayCtx.fillStyle = "rgba(0, 255, 0, 0.5)"; // 半透明绿
+          overlayCtx.fillRect(x, y, patchSize, patchSize);
+          lowCount++;
+        }
+      }
+
+      // 把覆盖层画到主画布
+      ctx.globalCompositeOperation = "source-over";
+      ctx.drawImage(overlay, 0, 0);
+
+      // 计算百分比
+      const highPercent = ((highCount / totalPatches) * 100).toFixed(1);
+      const mediumPercent = ((mediumCount / totalPatches) * 100).toFixed(1);
+      const lowPercent = ((lowCount / totalPatches) * 100).toFixed(1);
+
+      // 返回结果URL和区域数量信息
+      return {
+        resultUrl: canvas.toDataURL("image/png"),
+        highPercent,
+        mediumPercent,
+        lowPercent
+      };
+    }
+  </script>
+
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ("WebSocket" in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (
+              (elem.href && typeof rel != "string") ||
+              rel.length == 0 ||
+              rel.toLowerCase() == "stylesheet"
+            ) {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+              elem.href =
+                url +
+                (url.indexOf("?") >= 0 ? "&" : "?") +
+                "_cacheOverride=" +
+                new Date().valueOf();
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol =
+          window.location.protocol === "http:" ? "ws://" : "wss://";
+        var address =
+          protocol + window.location.host + window.location.pathname + "/ws";
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == "reload") window.location.reload();
+          else if (msg.data == "refreshcss") refreshCSS();
+        };
+        if (
+          sessionStorage &&
+          !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+        ) {
+          console.log("Live reload enabled.");
+          sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+        }
+      })();
+    } else {
+      console.error(
+        "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+      );
+    }
+    // ]]>
+  </script>
+
+  <div id="floating-button" class="floating-button" style="z-index: 999; font-size: 12px">
+    ChatGPT
+  </div>
+  <deepl-input-controller translate="no"><template shadowrootmode="open">
+      <link rel="stylesheet" href="chrome-extension://fancfknaplihpclbhbpclnmmjcjanbaf/build/content.css" />
+      <div dir="ltr" style="visibility: initial !important">
+        <div class="dl-input-translation-container svelte-95aucy">
+          <div></div>
+        </div>
+      </div>
+    </template></deepl-input-controller>
 </body>
 
 </html>
