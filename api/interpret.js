@@ -8,8 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const LLM_URL = 'https://api.moonshot.cn/v1/chat/completions';
-const API_KEY = process.env.KIMI_KEY;   // 保密
+const LLM_URL = 'https://api.deepseek.com';
+const API_KEY = 'sk-21a511574b4f40d2abb651eba7c7e516';   // 保密
 
 app.post('/api/interpret', async (req,res)=>{
   const {miningType, highPercent, mediumPercent, lowPercent, confidence, weights, hotspotCount, areaKm2} = req.body;
@@ -49,3 +49,4 @@ app.post('/api/interpret', async (req,res)=>{
 });
 
 app.listen(3000,()=>console.log('Interpret API on :3000'));
+
