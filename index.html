@@ -2410,13 +2410,13 @@
 `;
 
                         const res = await fetch('https://ai.nengyongai.cn/v1', {
-                            method: 'POST',
+                            // method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
                                 'Authorization': 'sk-9GeLnjTHY3oyLRGiiWa9eEPrI224e75RseMzfEcr0bNLFXCl' // ← 把你自己的 key 贴这里
                             },
                             body: JSON.stringify({
-                                model: 'deepseek-chat',
+                                model: 'gpt-4o-mini',
                                 messages: [{ role: 'user', content: prompt }],
                                 max_tokens: 800,
                                 temperature: 0.7
@@ -2926,6 +2926,7 @@
 </body>
 
 </html>
+
 
 
 
